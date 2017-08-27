@@ -1,5 +1,7 @@
 package com.qiuchenly.stuclient.biz;
 
+import java.util.List;
+
 /**
  * Author : QiuChenLy
  * Date    : ${DATA}
@@ -8,6 +10,6 @@ package com.qiuchenly.stuclient.biz;
  */
 
 public interface RequestOnClickListener {
-    void onSuccess();
+    void onSuccess(List<String> data);
     void onFailed();
 }
