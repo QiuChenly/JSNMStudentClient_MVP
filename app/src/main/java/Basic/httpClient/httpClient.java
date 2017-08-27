@@ -3,10 +3,12 @@ package Basic.httpClient;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
+import android.support.annotation.RequiresApi;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -51,16 +53,17 @@ public class httpClient {
     return Request_Image(url, "");
   }
 
-  public static String Request_Str(String url, String cookie) throws IOException {
+  public static void Request_Str(String url, String cookie,HttpResult httpResult) throws IOException {
     ResponseData responseData = Request(url, 0, null, cookie, null, 10000, 10000, false);
     if (responseData != null) {
-      return DecodeByteToString(responseData.responseByte);
+      httpResult.onSuccess(DecodeByteToString(responseData.responseByte));
+      return;
     }
-    return null;
+    httpResult.onFailed();
   }
 
-  public static String Request_Str(String url) throws IOException {
-    return Request_Str(url, "");
+  public static void Request_Str(String url,HttpResult result) throws IOException {
+    Request_Str(url, "",result);
   }
 
   public static String Request_Str(String url, String Data, String Cookie, String Chaset) throws
@@ -211,6 +214,7 @@ public class httpClient {
     return URLEncoder.encode(str, chaset);
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
   public static Bitmap BlurBitmap(Bitmap bitmap, float blur, Context context) {
     Bitmap TempBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(),
             Bitmap.Config.ARGB_8888);

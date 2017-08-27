@@ -10,6 +10,6 @@ import java.util.List;
  */
 
 public interface RequestOnClickListener {
-    void onSuccess(List<String> data);
-    void onFailed();
+    void onSuccess(String name,boolean isLeader,String session);
+    void onFailed(String errReson);
 }

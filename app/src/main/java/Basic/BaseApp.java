@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -135,5 +136,9 @@ abstract public class BaseApp extends Activity implements View.OnClickListener{
         startActivity(new Intent(this,classA));
         if(AllowFinish)
             finish();
+    }
+
+    public<T> void logs(T Message){
+        Log.d(getClass().getSimpleName(),Message.toString());
     }
 }

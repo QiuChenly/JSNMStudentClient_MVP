@@ -1,5 +1,9 @@
 package com.qiuchenly.stuclient.model;
 
+import android.graphics.Bitmap;
+
+import Basic.API.getImage;
+
 /**
  * Author : QiuChenLy
  * Date    : ${DATA}
@@ -10,4 +14,5 @@ package com.qiuchenly.stuclient.model;
 
 public interface RequestOnClick {
     void mLoginUser(String userName,String passWord,String vCode,RequestOnClickListener listener);
+    void mGetVcode(getImage image);
 }
