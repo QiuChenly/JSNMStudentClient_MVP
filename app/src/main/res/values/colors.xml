@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+
+    <!-- 透明主色调  -->
+    <color name="colorPrimaryDark">#00303f9f</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!-- ummmm.....酷黑色调?=_=? -->
+    <color name="SplashViewBackGround">#3d3840</color>
+
+</resources>
