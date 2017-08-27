@@ -5,12 +5,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.qiuchenly.stuclient.R;
+import com.qiuchenly.stuclient.presenter.mPresenterImp;
+import com.qiuchenly.stuclient.view.iViews;
 
 import Basic.BaseApp;
 
-public class LoginActivity extends BaseApp {
+public class LoginActivity extends BaseApp implements iViews {
     com.dd.CircularProgressButton circularProgressButton = null;
     TextView tLogin, tPass;
+    mPresenterImp mPresenterImp = null;
 
     public LoginActivity() {
         super();
@@ -18,7 +21,7 @@ public class LoginActivity extends BaseApp {
 
     @Override
     public void loadComplete() {
-
+        mPresenterImp = new mPresenterImp(this);
     }
 
     @Override
@@ -33,52 +36,33 @@ public class LoginActivity extends BaseApp {
     public void BeClick(View v) {
         switch (v.getId()) {
             case R.id.bLoginButton:
-                loginTask();
+                circularProgressButton.setClickable(false);
+                circularProgressButton.setProgress(1);
                 break;
             default:
                 break;
         }
     }
 
-    void loginTask(){
-        circularProgressButton.setClickable(false);
-        circularProgressButton.setProgress(1);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                boolean LoginResult=false;
-                if (LoginResult){
-                    circularProgressButton.setProgress(100);
-
-
-                    return;
-                }else{
-                    circularProgressButton.setProgress(-1);
-                }
-                circularProgressButton.setClickable(true);
-                circularProgressButton.setProgress(0);
-            }
-        },2000);
-
-
-
-
-
-//        ValueAnimator animator=ValueAnimator.ofInt(1,100);
-//        animator.setDuration(1500);
-//        animator.setInterpolator(new AnticipateInterpolator());
-//        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//            @Override
-//            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-//                circularProgressButton.setProgress((int) valueAnimator.getAnimatedValue());
-//            }
-//        });
-//        animator.start();
-    }
-
     @Override
     public int SetThisContentView() {
         return R.layout.activity_login;
+    }
+
+    @Override
+    public void LoginSuccess() {
+        circularProgressButton.setProgress(100);
+    }
+
+    @Override
+    public void LoginFailed() {
+        circularProgressButton.setProgress(-1);
+        circularProgressButton.setClickable(true);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                circularProgressButton.setProgress(0);
+            }
+        },1200);
     }
 }
