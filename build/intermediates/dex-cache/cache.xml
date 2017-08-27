@@ -3,75 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/chenyuqi/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
+        jar="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/JSNMStudentClient_MVP/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.8.0_ae86e3b8ce5ab862722371266850834dda06ec90/classes.dex" />
+        sha1="0fadc29ccb04cc67c4a27195ee50558b05c00d46">
+        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/JSNMStudentClient_MVP/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_51e7532bbefb4c90c0ddd7ca56a5c0a75b468599/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/JSNMStudentClient_MVP/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_64b09ae9bf89f5d4ec539c3d6af195ff4ddf9b7e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/chenyuqi/.android/build-cache/8d42119e46f46cfd229a4b2ff1a8c70f1af5a1c0/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0da81a4490a94a5c29501c4af7999cf8b31d900c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/chenyuqi/.android/build-cache/eba99adb8841f7a175ebb99085a9da7c4285b434/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4fc4bc23bb4603b0d73475a847bd237c3a6c92e1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/chenyuqi/.android/build-cache/8540fd7167c1b6b893315a9e73a03120310ba34f/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dc00fad8c88797d5f5582c426af5fc05db86ccbf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/chenyuqi/.android/build-cache/96d3c4d120f947832c6100c94d805c30dec31020/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9bc50e350238e258755ff3b7704acaf1665ede33/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/chenyuqi/.android/build-cache/63cebb566802488fe7291ca6b3782fc004e39de6/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_febf60e13122cdaa1c570b6336fb4b22db9a9000/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="178a48fdf7263b3bd37a259b47b6e166a2516ca7">
-        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_eb25768cf4d8e0674890f56b3c52fb163674bbf9/classes.dex" />
+        <dex dex="/Users/chenyuqi/Desktop/JIangSuNongMuStudentClient/JSNMStudentClient_MVP/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_64792b16fb24b6e9b37e4670f70168fba895f562/classes.dex" />
     </item>
 
 </items>

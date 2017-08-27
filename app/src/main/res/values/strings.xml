@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">JIangSuNongMuStudentClient</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="app_name">牧院学生系统</string>
 </resources>

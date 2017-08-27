@@ -16,8 +16,6 @@ import Basic.BaseApp;
 
 public class SplashActivity extends BaseApp {
 
-
-
     //配置页面基本属性
     public SplashActivity() {
         super(false, true, true);
@@ -30,7 +28,7 @@ public class SplashActivity extends BaseApp {
 
     @Override
     public void loadComplete() {
-        TextView t = (TextView) $(R.id.tSplashTitle, true);
+        TextView t = $(R.id.tSplashTitle, true);
 
         startAnimation(t, false,1);
     }
