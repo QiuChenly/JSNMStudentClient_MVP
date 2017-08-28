@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.qiuchenly.stuclient.R;
 import com.qiuchenly.stuclient.presenter.mPresenterImp;
-import com.qiuchenly.stuclient.view.iViews;
+import com.qiuchenly.stuclient.view.MainView.Main;
 
 import Basic.BaseApp;
 

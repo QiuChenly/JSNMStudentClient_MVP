@@ -41,7 +41,7 @@ public class LoginAPI {
         if (responseData.responseCode == 302) {
             //302跳转表示登陆成功
             responseData = httpClient.Request("http://alst.jsahvc.edu.cn/default.aspx",
-                    httpClient.cookies, null);
+                    httpClient.cookies);
             //是否为班干部
             if (responseData.responseText.contains("班干部")) {
                 isLeader = true;

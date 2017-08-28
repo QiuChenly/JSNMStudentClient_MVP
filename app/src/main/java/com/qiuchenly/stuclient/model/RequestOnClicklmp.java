@@ -21,29 +21,27 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     @Override
     public void mLoginUser(final String userName, final String passWord,
                            final String vCode, final RequestOnClickListener listener) {
-        listener.onSuccess("测试员",true,"JSSESSIONID=123");
-        return;
-//        new Thread(){
-//            @Override
-//            public void run() {
-//                try {
-//                    login(userName, passWord, vCode, new LoginResult() {
-//                        @Override
-//                        public void onSuccess(String StudentName, boolean isLeader, String session) {
-//                            listener.onSuccess(StudentName, isLeader, session);
-//                        }
-//
-//                        @Override
-//                        public void onFailed(String ErrReason) {
-//                            listener.onFailed(ErrReason);
-//                        }
-//                    });
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                    listener.onFailed("向服务器请求发送异常!");
-//                }
-//            }
-//        }.start();
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    login(userName, passWord, vCode, new LoginResult() {
+                        @Override
+                        public void onSuccess(String StudentName, boolean isLeader, String session) {
+                            listener.onSuccess(StudentName, isLeader, session);
+                        }
+
+                        @Override
+                        public void onFailed(String ErrReason) {
+                            listener.onFailed(ErrReason);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    listener.onFailed("向服务器请求发送异常!");
+                }
+            }
+        }.start();
 
     }
 
