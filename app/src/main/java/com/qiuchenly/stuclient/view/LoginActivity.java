@@ -53,7 +53,7 @@ public class LoginActivity extends BaseApp implements iViews {
                 mPresenterImp.getcode();
                 break;
             case R.id.tForgetPassword:
-                
+                showToasts("请联系你们老师或回忆自己设定的密码~");
                 break;
             default:
                 break;

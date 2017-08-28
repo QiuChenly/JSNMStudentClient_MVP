@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lDrawerlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.qiuchenly.stuclient.view.Main">
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        layout="@layout/mainviews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/navigationshow" />
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
