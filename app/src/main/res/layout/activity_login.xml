@@ -26,6 +26,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:layout_marginTop="35dp"
 
             android:background="@drawable/roundcriclebackground"
@@ -75,8 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    >
+                    android:layout_weight="1">
 
                     <AutoCompleteTextView
                         android:id="@+id/tlogin_vcode"
@@ -93,9 +93,10 @@
                 <ImageView
                     android:id="@+id/iVcode"
                     android:layout_width="104dp"
-                    android:layout_gravity="center"
-
                     android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/clickable"
+                    android:clickable="true"
                     app:srcCompat="@mipmap/ic_launcher" />
 
             </LinearLayout>
@@ -110,7 +111,7 @@
             android:layout_marginTop="20dp"
             android:clickable="true"
             android:textColor="#f1f1f1"
-            android:textSize="15dp"
+            android:textSize="15sp"
             app:cpb_cornerRadius="1dp"
             app:cpb_selectorIdle="@color/colorPrimary"
             app:cpb_textComplete="登录成功!"

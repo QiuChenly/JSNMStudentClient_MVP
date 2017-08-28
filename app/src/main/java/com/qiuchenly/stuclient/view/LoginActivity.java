@@ -14,9 +14,8 @@ import Basic.BaseApp;
 
 public class LoginActivity extends BaseApp implements iViews {
     com.dd.CircularProgressButton circularProgressButton = null;
-    TextView tLogin, tPass,tLoginVcode;
+    TextView tLogin, tPass,tLoginVcode,tForgetPass;
     mPresenterImp mPresenterImp = null;
-
     ImageView iVcode=null;
 
     public LoginActivity() {
@@ -37,6 +36,7 @@ public class LoginActivity extends BaseApp implements iViews {
         tPass = $(R.id.tlogin_pass, false);
         tLoginVcode=$(R.id.tlogin_vcode,false);
         iVcode=$(R.id.iVcode,true);
+        tForgetPass=$(R.id.tForgetPassword,true);
     }
 
     @Override
@@ -51,6 +51,9 @@ public class LoginActivity extends BaseApp implements iViews {
                 break;
             case R.id.iVcode:
                 mPresenterImp.getcode();
+                break;
+            case R.id.tForgetPassword:
+                
                 break;
             default:
                 break;

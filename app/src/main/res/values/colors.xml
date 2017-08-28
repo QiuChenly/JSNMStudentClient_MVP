@@ -10,4 +10,6 @@
     <!-- ummmm.....酷黑色调?=_=? -->
     <color name="SplashViewBackGround">#3d3840</color>
 
+    <!-- ummm 验证码编辑框是白色的背景,用白色适配就可以了 -->
+    <color name="vcodeBackGround" >#fcfcfc</color>
 </resources>
