@@ -111,12 +111,15 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
     @Override
     public void LoginSuccess(String name, boolean isLeader, String session) {
         showToast("Hi 欢迎回来 " + userName);
+        share.SavePreference("isLogin", true);
         startActivity(Main.class, true);
     }
 
     @Override
     public void LoginFailed(String reason) {
-        showToast("呀~快速登录失效啦!请您手动登录~\n服务器返回信息:"+reason);
+        showToast("呀~快速登录失效啦!请您手动登录~\n服务器返回信息:" + reason);
+        share.SavePreference("session", "");
+        share.SavePreference("isLogin", false);
         startActivity(LoginActivity.class, true);
     }
 

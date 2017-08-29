@@ -104,6 +104,8 @@ public class LoginActivity extends BaseApp implements iViews,iViewGetPreference 
     @Override
     public void LoginFailed(final String reason) {
         circularProgressButton.setProgress(-1);
+        share.SavePreference("isLogin",false);
+        share.SavePreference("session","");
         showToast(reason);
         new Handler().postDelayed(new Runnable() {
             @Override

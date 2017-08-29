@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="24dp"
         android:background="@color/SplashViewBackGround"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -36,8 +36,7 @@
                 android:layout_width="23dp"
                 android:layout_height="23dp"
                 android:layout_gravity="center"
-                android:background="@drawable/titlebar_menu"
-                />
+                android:background="@drawable/titlebar_menu" />
         </FrameLayout>
 
         <HorizontalScrollView
@@ -49,35 +48,61 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:orientation="horizontal"
                 android:theme="@style/AppTheme.NoActionBar"
-                android:visibility="gone">
+                android:visibility="visible">
 
-                <ImageView
-                    android:id="@+id/iv_title_gank"
-                    android:layout_width="55dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    />
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/iv_title_one"
-                    android:layout_width="55dp"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
+                    <TextClock
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp"
+                        tools:targetApi="jelly_bean_mr1" />
 
-                    />
+                    <TextView
+                        android:id="@+id/nav_title_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="QiuChenly"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp" />
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/iv_title_dou"
-                    android:layout_width="55dp"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
 
-                    />
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_title_gank"-->
+                <!--android:layout_width="55dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                <!--android:clickable="true"-->
+                <!--/>-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_title_one"-->
+                <!--android:layout_width="55dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                <!--android:clickable="true"-->
+
+                <!--/>-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_title_dou"-->
+                <!--android:layout_width="55dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                <!--android:clickable="true"-->
+
+                <!--/>-->
 
             </LinearLayout>
 
@@ -89,7 +114,6 @@
         android:id="@+id/contentView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
 
     </FrameLayout>

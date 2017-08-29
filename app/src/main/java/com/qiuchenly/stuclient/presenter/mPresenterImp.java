@@ -32,6 +32,8 @@ public class mPresenterImp {
         handler = new Handler(Looper.getMainLooper());
     }
 
+
+
     public void fastLogin(String session){
         requestOnClick.mFastLogin(session, new RequestOnClickListener() {
             @Override

@@ -15,4 +15,6 @@
 
     <!--白色搭配淡灰色强调内容-->
     <color name="custom">#efefef</color>
+
+    <color name="nav_fontColor">#333333</color>
 </resources>
