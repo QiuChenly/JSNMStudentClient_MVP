@@ -1,7 +1,5 @@
 package com.qiuchenly.stuclient.model;
 
-import java.util.List;
-
 /**
  * Author : QiuChenLy
  * Date    : ${DATA}
@@ -10,6 +8,7 @@ import java.util.List;
  */
 
 public interface RequestOnClickListener {
-    void onSuccess(String name,boolean isLeader,String session);
+    void onSuccess(String name, boolean isLeader, String session);
+
     void onFailed(String errReson);
 }

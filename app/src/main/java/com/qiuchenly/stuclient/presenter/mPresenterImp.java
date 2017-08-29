@@ -1,12 +1,13 @@
 package com.qiuchenly.stuclient.presenter;
 
 import android.graphics.Bitmap;
-import android.os.*;
+import android.os.Handler;
+import android.os.Looper;
 
-import com.qiuchenly.stuclient.model.*;
+import com.qiuchenly.stuclient.model.RequestOnClick;
+import com.qiuchenly.stuclient.model.RequestOnClickListener;
+import com.qiuchenly.stuclient.model.RequestOnClicklmp;
 import com.qiuchenly.stuclient.view.iViews;
-
-import java.util.List;
 
 import Basic.API.LoginAPI;
 import Basic.API.getImage;
@@ -24,7 +25,7 @@ public class mPresenterImp {
     RequestOnClick requestOnClick = null;
     private Handler handler = null;
 
-    private LoginAPI api=null;
+    private LoginAPI api = null;
 
     public mPresenterImp(com.qiuchenly.stuclient.view.iViews iViews) {
         this.iViews = iViews;
@@ -33,8 +34,7 @@ public class mPresenterImp {
     }
 
 
-
-    public void fastLogin(String session){
+    public void fastLogin(String session) {
         requestOnClick.mFastLogin(session, new RequestOnClickListener() {
             @Override
             public void onSuccess(final String name, final boolean isLeader, final String session) {
@@ -42,7 +42,7 @@ public class mPresenterImp {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iViews.LoginSuccess(name,isLeader,session);
+                        iViews.LoginSuccess(name, isLeader, session);
                     }
                 });
             }
@@ -54,12 +54,12 @@ public class mPresenterImp {
                     public void run() {
                         iViews.LoginFailed(errReson);
                     }
-                },1);
+                }, 1);
             }
         });
     }
 
-    public void login(String userName,String passWord,String vCode){
+    public void login(String userName, String passWord, String vCode) {
         requestOnClick.mLoginUser(userName, passWord, vCode, new RequestOnClickListener() {
             @Override
             public void onSuccess(final String name, final boolean isLeader, final String session) {
@@ -67,7 +67,7 @@ public class mPresenterImp {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iViews.LoginSuccess(name,isLeader,session);
+                        iViews.LoginSuccess(name, isLeader, session);
                     }
                 });
             }
@@ -79,12 +79,12 @@ public class mPresenterImp {
                     public void run() {
                         iViews.LoginFailed(reason);
                     }
-                },1);
+                }, 1);
             }
         });
     }
 
-    public void getcode(){
+    public void getcode() {
         requestOnClick.mGetVcode(new getImage() {
             @Override
             public void onSuccess(final Bitmap bitmap) {

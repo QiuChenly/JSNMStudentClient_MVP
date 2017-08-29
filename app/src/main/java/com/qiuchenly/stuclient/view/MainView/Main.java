@@ -3,6 +3,7 @@ package com.qiuchenly.stuclient.view.MainView;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.qiuchenly.stuclient.R;
+import com.qiuchenly.stuclient.view.LoginActivity;
 import com.qiuchenly.stuclient.view.MainView.presenter.MainPresenterlmp;
 
 import Basic.BaseApp;
@@ -27,7 +29,7 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
     DrawerLayout lDrawerlayout;
     MainPresenterlmp mainPresenterlmp = null;
     ImageView iv_userPic, iv_HeadImage;
-    TextView tuserName, tuserNick,nav_title_username;
+    TextView tuserName, tuserNick, nav_title_username;
 
     LinearLayout nav_program_exitUser, nav_program_movetoback;
     FrameLayout ll_title_menu;
@@ -50,7 +52,7 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
         iv_userPic = $(R.id.iv_title_userImage, false);
         iv_HeadImage = $(R.id.nav_HeaderImage, false);
         //Test Model,will remove in under
-        nav_title_username=$(R.id.nav_title_username,false);
+        nav_title_username = $(R.id.nav_title_username, false);
         //Test Model End
 
         nav_program_exitUser = $(R.id.nav_program_exitUser, true);
@@ -67,8 +69,15 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
             case R.id.ll_title_menu:
                 lDrawerlayout.openDrawer(Gravity.START);
                 break;
+            case R.id.nav_program_exit:
+                lDrawerlayout.closeDrawer(Gravity.START);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.exit(0);
+                    }
+                }, 300);
         }
-
     }
 
     @Override
@@ -100,6 +109,12 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
     @Override
     public void exitUser() {
         lDrawerlayout.closeDrawer(Gravity.START);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(LoginActivity.class, true);
+            }
+        }, 300);
     }
 
     @Override

@@ -58,14 +58,6 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <TextClock
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textColor="#ffffff"
-                        android:textSize="21sp"
-                        tools:targetApi="jelly_bean_mr1" />
-
                     <TextView
                         android:id="@+id/nav_title_username"
                         android:layout_width="match_parent"
@@ -73,7 +65,7 @@
                         android:gravity="center"
                         android:text="QiuChenly"
                         android:textColor="#ffffff"
-                        android:textSize="13sp" />
+                        android:textSize="21sp" />
                 </LinearLayout>
 
 

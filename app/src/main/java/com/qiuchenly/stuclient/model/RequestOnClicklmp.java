@@ -1,10 +1,6 @@
 package com.qiuchenly.stuclient.model;
 
-import android.graphics.Bitmap;
-import android.util.Log;
-
 import java.io.IOException;
-import java.util.BitSet;
 
 import Basic.API.LoginAPI;
 import Basic.API.LoginResult;

@@ -8,8 +8,12 @@ import android.graphics.Bitmap;
 
 public interface iMainViews {
     void getNews();
+
     void getImage(Bitmap bitmap);
+
     void getName(String name);
+
     void getnick(String nick);
+
     void exitUser();
 }

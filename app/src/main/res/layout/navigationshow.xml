@@ -2,7 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v4.widget.NestedScrollView
@@ -37,8 +36,7 @@
                         android:id="@+id/iv_title_userImage"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_marginLeft="15dp"
-                        />
+                        android:layout_marginLeft="15dp" />
 
                     <TextView
                         android:id="@+id/nav_user_name"
@@ -62,14 +60,17 @@
 
                 </LinearLayout>
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp">
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:alpha="0.05"
-                    android:background="#000000"/>
+                    android:background="#000000" />
+
                 <TextView
                     android:layout_gravity="center|left"
                     android:layout_width="wrap_content"
@@ -78,6 +79,7 @@
                     android:text="我的"
                     android:textSize="11sp" />
             </FrameLayout>
+
             <LinearLayout
                 android:id="@+id/nav_index"
                 android:layout_width="match_parent"
@@ -90,8 +92,9 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                    android:layout_width="30dp"
+                    android:src="@drawable/mail"
+                    android:layout_height="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,9 +103,11 @@
                     android:text="我的消息"
                     android:textColor="@color/nav_fontColor"
                     android:textSize="15sp" />
+
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -115,22 +120,24 @@
 
             </LinearLayout>
 
-           <FrameLayout
-               android:layout_width="match_parent"
-               android:layout_height="20dp">
-               <View
-                   android:layout_width="match_parent"
-                   android:layout_height="20dp"
-                   android:alpha="0.05"
-                   android:background="#000000"/>
-               <TextView
-                   android:layout_gravity="center|left"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
-                   android:text="事务办理"
-                   android:textSize="11sp" />
-               </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:alpha="0.05"
+                    android:background="#000000" />
+
+                <TextView
+                    android:layout_gravity="center|left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="事务办理"
+                    android:textSize="11sp" />
+            </FrameLayout>
 
             <LinearLayout
                 android:id="@+id/nav_sets"
@@ -144,8 +151,9 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                    android:layout_width="30dp"
+                    android:src="@drawable/tag"
+                    android:layout_height="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -173,8 +181,9 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                    android:src="@drawable/tag"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -189,11 +198,13 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp">
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:alpha="0.05"
-                    android:background="#000000"/>
+                    android:background="#000000" />
+
                 <TextView
                     android:layout_gravity="center|left"
                     android:layout_width="wrap_content"
@@ -215,8 +226,9 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                    android:src="@drawable/tag"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -249,6 +261,8 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:background="@drawable/clickable"
             android:orientation="horizontal">
 
@@ -262,8 +276,9 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/send"
                     android:layout_gravity="center" />
 
                 <TextView
@@ -280,15 +295,16 @@
 
             <LinearLayout
                 android:id="@+id/nav_program_exitUser"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/clickable"
                 android:clickable="true"
                 android:gravity="center">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/left_arrow"
                     android:layout_gravity="center" />
 
                 <TextView

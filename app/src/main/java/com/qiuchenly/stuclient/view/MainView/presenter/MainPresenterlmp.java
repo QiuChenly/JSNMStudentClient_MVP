@@ -4,7 +4,6 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.qiuchenly.stuclient.view.MainView.iMainViews;
-import com.qiuchenly.stuclient.view.iViews;
 
 import Basic.SharedPreferences.iViewGetPreference;
 import Basic.SharedPreferences.sharePreference;
@@ -29,8 +28,9 @@ public class MainPresenterlmp {
         iMainViews.getName(share.getStringPreference("userName"));
         iMainViews.getnick("暂无");
     }
-    public void exitUser(){
-        share.SavePreference("isLogin",false);
+
+    public void exitUser() {
+        share.SavePreference("isLogin", false);
         iMainViews.exitUser();
     }
 }

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/SplashViewBackGround"
     tools:context="com.qiuchenly.stuclient.view.LoginActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +22,7 @@
             android:text="登录\n即刻开始处理事务!"
             android:textColor="#f5f5f5"
             android:textSize="26sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,6 +30,7 @@
             android:layout_marginTop="35dp"
             android:background="@drawable/roundcriclebackground"
             android:orientation="vertical">
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,6 +47,7 @@
                     android:textSize="16sp" />
 
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,11 +69,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight="1">
+
                     <AutoCompleteTextView
                         android:id="@+id/tlogin_vcode"
                         android:layout_width="match_parent"
@@ -80,6 +86,7 @@
                         android:singleLine="true"
                         android:textSize="16sp" />
                 </android.support.design.widget.TextInputLayout>
+
                 <ImageView
                     android:id="@+id/iVcode"
                     android:layout_width="104dp"
@@ -90,6 +97,7 @@
                     app:srcCompat="@mipmap/ic_launcher" />
             </LinearLayout>
         </LinearLayout>
+
         <com.dd.CircularProgressButton
             android:id="@+id/bLoginButton"
             android:layout_width="match_parent"
@@ -103,6 +111,7 @@
             app:cpb_textComplete="登录成功!"
             app:cpb_textError="登录失败!"
             app:cpb_textIdle="登 录" />
+
         <TextView
             android:id="@+id/tForgetPassword"
             android:layout_width="match_parent"

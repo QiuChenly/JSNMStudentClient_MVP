@@ -15,11 +15,11 @@ import Basic.BaseApp;
 import Basic.SharedPreferences.iViewGetPreference;
 import Basic.SharedPreferences.sharePreference;
 
-public class LoginActivity extends BaseApp implements iViews,iViewGetPreference {
+public class LoginActivity extends BaseApp implements iViews, iViewGetPreference {
     com.dd.CircularProgressButton circularProgressButton = null;
-    TextView tLogin, tPass,tLoginVcode,tForgetPass;
+    TextView tLogin, tPass, tLoginVcode, tForgetPass;
     mPresenterImp mPresenterImp = null;
-    ImageView iVcode=null;
+    ImageView iVcode = null;
     sharePreference share = null;
 
     public LoginActivity() {
@@ -39,9 +39,9 @@ public class LoginActivity extends BaseApp implements iViews,iViewGetPreference 
         circularProgressButton.setIndeterminateProgressMode(true);
         tLogin = $(R.id.tlogin_user, false);
         tPass = $(R.id.tlogin_pass, false);
-        tLoginVcode=$(R.id.tlogin_vcode,false);
-        iVcode=$(R.id.iVcode,true);
-        tForgetPass=$(R.id.tForgetPassword,true);
+        tLoginVcode = $(R.id.tlogin_vcode, false);
+        iVcode = $(R.id.iVcode, true);
+        tForgetPass = $(R.id.tForgetPassword, true);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class LoginActivity extends BaseApp implements iViews,iViewGetPreference 
                 circularProgressButton.setClickable(false);
                 circularProgressButton.setProgress(1);
                 //if (validation(tLogin.getText().toString(), 1) || validation(tPass.getText().toString(), 2)) {
-                    mPresenterImp.login(tLogin.getText().toString(), tPass.getText().toString(), tLoginVcode.getText().toString());
+                mPresenterImp.login(tLogin.getText().toString(), tPass.getText().toString(), tLoginVcode.getText().toString());
                 //}
                 break;
             case R.id.iVcode:
@@ -87,16 +87,16 @@ public class LoginActivity extends BaseApp implements iViews,iViewGetPreference 
     @Override
     public void LoginSuccess(final String name, boolean isLeader, String session) {
         circularProgressButton.setProgress(100);
-        share.SavePreference("session",session);
-        share.SavePreference("userName",name);
-        share.SavePreference("id",tLogin.getText().toString());
-        share.SavePreference("password",tPass.getText().toString());
-        share.SavePreference("isLogin",true);
+        share.SavePreference("session", session);
+        share.SavePreference("userName", name);
+        share.SavePreference("id", tLogin.getText().toString());
+        share.SavePreference("password", tPass.getText().toString());
+        share.SavePreference("isLogin", true);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                showToasts("登录成功!欢迎你 "+name);
-                startActivity(Main.class,true);
+                showToasts("登录成功!欢迎你 " + name);
+                startActivity(Main.class, true);
             }
         }, 1000);
     }
@@ -104,8 +104,8 @@ public class LoginActivity extends BaseApp implements iViews,iViewGetPreference 
     @Override
     public void LoginFailed(final String reason) {
         circularProgressButton.setProgress(-1);
-        share.SavePreference("isLogin",false);
-        share.SavePreference("session","");
+        share.SavePreference("isLogin", false);
+        share.SavePreference("session", "");
         showToast(reason);
         new Handler().postDelayed(new Runnable() {
             @Override

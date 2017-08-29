@@ -1,7 +1,5 @@
 package com.qiuchenly.stuclient.model;
 
-import android.graphics.Bitmap;
-
 import Basic.API.getImage;
 
 /**
@@ -13,7 +11,9 @@ import Basic.API.getImage;
 
 
 public interface RequestOnClick {
-    void mLoginUser(String userName,String passWord,String vCode,RequestOnClickListener listener);
+    void mLoginUser(String userName, String passWord, String vCode, RequestOnClickListener listener);
+
     void mGetVcode(getImage image);
-    void mFastLogin(String session,RequestOnClickListener listener);
+
+    void mFastLogin(String session, RequestOnClickListener listener);
 }
