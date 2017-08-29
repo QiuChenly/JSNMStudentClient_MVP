@@ -37,8 +37,9 @@ public class SplashActivity extends BaseApp implements iViewGetPreference {
         startAnimation(t, false, 1);
         share = new sharePreference(this);
 
-        userName=share.getStringPreference("userName");
-        session
+        userName = share.getStringPreference("userName");
+        session = share.getStringPreference("session");
+
 
     }
 
