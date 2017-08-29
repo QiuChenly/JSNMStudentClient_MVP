@@ -2,22 +2,30 @@ package com.qiuchenly.stuclient;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextView;
 
+import com.qiuchenly.stuclient.presenter.mPresenterImp;
 import com.qiuchenly.stuclient.view.LoginActivity;
+import com.qiuchenly.stuclient.view.MainView.Main;
+import com.qiuchenly.stuclient.view.iViews;
 
 import Basic.BaseApp;
 import Basic.SharedPreferences.iViewGetPreference;
 import Basic.SharedPreferences.sharePreference;
+import Basic.httpClient.httpClient;
 
-public class SplashActivity extends BaseApp implements iViewGetPreference {
+public class SplashActivity extends BaseApp implements iViewGetPreference, iViews {
 
     sharePreference share = null;
 
-    String userName;
+    mPresenterImp presenterImp = null;
+
+
+    String userName, id, password;
     String session;
     boolean isLogin = false;
 
@@ -34,13 +42,9 @@ public class SplashActivity extends BaseApp implements iViewGetPreference {
     @Override
     public void loadComplete() {
         TextView t = $(R.id.tSplashTitle, true);
-        startAnimation(t, false, 1);
         share = new sharePreference(this);
-
-        userName = share.getStringPreference("userName");
-        session = share.getStringPreference("session");
-
-
+        presenterImp = new mPresenterImp(this);
+        startAnimation(t, false, 1);
     }
 
     void startAnimation(final TextView btn, final boolean isHide, final int STATUS) {
@@ -67,7 +71,16 @@ public class SplashActivity extends BaseApp implements iViewGetPreference {
                         startAnimation(btn, true, 4);
                         break;
                     case 4:
-                        startActivity(LoginActivity.class, true);
+                        if (isLogin = share.getBooleanPreference("isLogin")) {
+                            userName = share.getStringPreference("userName");
+//                            id = share.getStringPreference("id");
+//                            password = share.getStringPreference("password");
+                            session = share.getStringPreference("session");
+                            httpClient.setCookies(session);
+                            presenterImp.fastLogin(session);
+                        } else {
+                            startActivity(LoginActivity.class, true);
+                        }
                 }
             }
 
@@ -93,5 +106,27 @@ public class SplashActivity extends BaseApp implements iViewGetPreference {
     @Override
     public Context getInstance() {
         return this;
+    }
+
+    @Override
+    public void LoginSuccess(String name, boolean isLeader, String session) {
+        showToast("Hi 欢迎回来 " + userName);
+        startActivity(Main.class, true);
+    }
+
+    @Override
+    public void LoginFailed(String reason) {
+        showToast("呀~快速登录失效啦!请您手动登录~\n服务器返回信息:"+reason);
+        startActivity(LoginActivity.class, true);
+    }
+
+    @Override
+    public void switchVcode(Bitmap Vcode) {
+//无需实现此方法
+    }
+
+    @Override
+    public <T> void showToasts(T msg) {
+//无需实现
     }
 }

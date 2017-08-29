@@ -28,6 +28,15 @@ public class LoginAPI {
 //        _viewStategenerator =
 //                GetSubText(ResponseBody, "id=\"__VIEWSTATEGENERATOR\" value=\"", "\"", 0);
 //    }
+
+    /**
+     * 登录接口
+     * @param userName 账号
+     * @param passWord 密码
+     * @param vCode 验证码
+     * @param loginResult 登录回调接口
+     * @throws IOException IO异常
+     */
     public void login(String userName, String passWord, String vCode, LoginResult loginResult)
             throws IOException {
         boolean isLeader = false;
@@ -36,7 +45,7 @@ public class LoginAPI {
 
         String url = "http://alst.jsahvc.edu.cn/login.aspx";
         String data = "__VIEWSTATE=&__VIEWSTATEGENERATOR=&userbh=" + userName +
-                "&vcode="+vCode+"&cw=&xzbz=1&pas2s=" + utils.md5(passWord);
+                "&vcode=" + vCode + "&cw=&xzbz=1&pas2s=" + utils.md5(passWord);
         ResponseData responseData = httpClient.Request(url, data, httpClient.cookies);
         if (responseData.responseCode == 302) {
             //302跳转表示登陆成功
@@ -51,18 +60,41 @@ public class LoginAPI {
                 name = GetSubText(responseData.responseText, "><b>欢迎你:", "\n", 0).trim();
             }
             session = httpClient.cookies;
-            if (session != "" || name != "") {
+            if (session.length() > 0 || name.length() > 0) {
                 loginResult.onSuccess(name, isLeader, session);
             } else {
                 loginResult.onFailed("账号或密码错误!");
             }
         } else {
-            loginResult.onFailed(GetSubText(responseData.responseText,"<input name=\"cw\" type=\"hidden\" id=\"cw\" value=\"","\" />",0));
+            loginResult.onFailed(GetSubText(responseData.responseText, "<input name=\"cw\" type=\"hidden\" id=\"cw\" value=\"", "\" />", 0));
         }
     }
 
-    public void getImage(final getImage image){
-        new Thread(){
+    public void fastLogin(String session,LoginResult result) throws IOException {
+       ResponseData responseData = httpClient.Request("http://alst.jsahvc.edu.cn/default.aspx",
+                httpClient.cookies);
+
+        boolean isLeader=false;
+        String name="";
+
+        //是否为班干部
+        if (responseData.responseText.contains("班干部")) {
+            isLeader = true;
+        }
+
+        if (responseData.responseText.contains("><b>欢迎你:")) {
+            name = GetSubText(responseData.responseText, "><b>欢迎你:", "\n", 0).trim();
+        }
+        session = httpClient.cookies;
+        if (session.length() > 0 || name.length() > 0) {
+            result.onSuccess(name, isLeader, session);
+        } else {
+            result.onFailed("快速登录失败!请重新登录!");
+        }
+    }
+
+    protected void getImage(final getImage image) {
+        new Thread() {
             @Override
             public void run() {
                 String url = "http://alst.jsahvc.edu.cn/VCode.aspx";

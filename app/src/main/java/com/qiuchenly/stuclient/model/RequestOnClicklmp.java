@@ -21,7 +21,7 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     @Override
     public void mLoginUser(final String userName, final String passWord,
                            final String vCode, final RequestOnClickListener listener) {
-        new Thread(){
+        new Thread() {
             @Override
             public void run() {
                 try {
@@ -49,4 +49,29 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     public void mGetVcode(getImage image) {
         getImage(image);
     }
+
+    @Override
+    public void mFastLogin(final String session, final RequestOnClickListener listener) {
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    fastLogin(session, new LoginResult() {
+                        @Override
+                        public void onSuccess(String StudentName, boolean isLeader, String session) {
+                            listener.onSuccess(StudentName, isLeader, session);
+                        }
+
+                        @Override
+                        public void onFailed(String ErrReason) {
+                            listener.onFailed(ErrReason);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+    }
+
 }

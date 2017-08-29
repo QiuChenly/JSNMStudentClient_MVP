@@ -31,6 +31,32 @@ public class mPresenterImp {
         requestOnClick = new RequestOnClicklmp();
         handler = new Handler(Looper.getMainLooper());
     }
+
+    public void fastLogin(String session){
+        requestOnClick.mFastLogin(session, new RequestOnClickListener() {
+            @Override
+            public void onSuccess(final String name, final boolean isLeader, final String session) {
+                //线程安全
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        iViews.LoginSuccess(name,isLeader,session);
+                    }
+                });
+            }
+
+            @Override
+            public void onFailed(final String errReson) {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        iViews.LoginFailed(errReson);
+                    }
+                },1);
+            }
+        });
+    }
+
     public void login(String userName,String passWord,String vCode){
         requestOnClick.mLoginUser(userName, passWord, vCode, new RequestOnClickListener() {
             @Override
@@ -51,7 +77,7 @@ public class mPresenterImp {
                     public void run() {
                         iViews.LoginFailed(reason);
                     }
-                },2000);
+                },1);
             }
         });
     }
@@ -66,7 +92,6 @@ public class mPresenterImp {
                         iViews.switchVcode(bitmap);
                     }
                 });
-
             }
 
             @Override
