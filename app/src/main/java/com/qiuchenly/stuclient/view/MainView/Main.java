@@ -3,10 +3,15 @@ package com.qiuchenly.stuclient.view.MainView;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,6 +20,7 @@ import android.widget.TextView;
 import com.qiuchenly.stuclient.R;
 import com.qiuchenly.stuclient.view.LoginActivity;
 import com.qiuchenly.stuclient.view.MainView.presenter.MainPresenterlmp;
+import com.qiuchenly.stuclient.view.MainView.rvadapter.recyclerViewAdapter;
 
 import Basic.BaseApp;
 import Basic.SharedPreferences.iViewGetPreference;
@@ -34,15 +40,29 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
     LinearLayout nav_program_exitUser, nav_program_movetoback;
     FrameLayout ll_title_menu;
 
+    RecyclerView rv_showNews;
 
     @Override
     public void loadComplete() {
-        //侧滑菜单透明
+        //侧滑菜单Header透明
         lDrawerlayout = (DrawerLayout) findViewById(R.id.lDrawerlayout);
         StatusBarUtil.setColorNoTranslucentForDrawerLayout(this, lDrawerlayout,
                 Color.argb(0, 0, 0, 0));
         mainPresenterlmp = new MainPresenterlmp(this, this);
 
+        recyclerViewAdapter adapter=new recyclerViewAdapter();
+        rv_showNews.setHasFixedSize(false);
+        rv_showNews.setLayoutManager(new LinearLayoutManager(this));
+        rv_showNews.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+                outRect.top=5;
+                outRect.left=0;
+                outRect.right=0;
+                outRect.bottom=5;
+            }
+        });
+        rv_showNews.setAdapter(adapter);
     }
 
     @Override
@@ -58,6 +78,7 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
         nav_program_exitUser = $(R.id.nav_program_exitUser, true);
         nav_program_movetoback = $(R.id.nav_program_exit, true);
         ll_title_menu = $(R.id.ll_title_menu, true);
+        rv_showNews = $(R.id.rv_showNews, false);
     }
 
     @Override

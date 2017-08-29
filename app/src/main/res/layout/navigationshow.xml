@@ -261,14 +261,12 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
             android:background="@drawable/clickable"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/nav_program_exit"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="right"
                 android:background="@drawable/clickable"
@@ -278,15 +276,17 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_marginLeft="16dp"
                     android:src="@drawable/send"
                     android:layout_gravity="center" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/nav_fontColor"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="16dp"
                     android:gravity="center"
                     android:text="退出"
                     android:textSize="15sp" />
@@ -302,6 +302,7 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:layout_marginLeft="16dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/left_arrow"
@@ -309,12 +310,13 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:textColor="@color/nav_fontColor"
                     android:gravity="center"
                     android:text="注销登录"
+                    android:layout_marginRight="16dp"
                     android:textSize="15sp" />
 
             </LinearLayout>

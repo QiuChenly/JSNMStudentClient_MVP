@@ -16,4 +16,5 @@ public interface iMainViews {
     void getnick(String nick);
 
     void exitUser();
+
 }

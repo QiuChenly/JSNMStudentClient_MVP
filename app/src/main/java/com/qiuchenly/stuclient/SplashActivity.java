@@ -60,16 +60,23 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
             public void onAnimationEnd(Animation animation) {
                 switch (STATUS) {
                     case 1:
-                        startAnimation(btn, true, 2);
+                        startAnimation(btn, true, 4);
                         break;
                     case 2:
-                        btn.setText("QiuChenly Design");
+                        btn.setText("全新架构 从\"芯\"出发");
                         startAnimation(btn, false, 3);
                         break;
                     case 3:
                         startAnimation(btn, true, 4);
                         break;
                     case 4:
+                        btn.setText("QiuChenly originality");
+                        startAnimation(btn, false, 5);
+                        break;
+                    case 5:
+                        startAnimation(btn, true, 6);
+                        break;
+                    case 6:
                         if (isLogin = share.getBooleanPreference("isLogin")) {
                             userName = share.getStringPreference("userName");
 //                            id = share.getStringPreference("id");

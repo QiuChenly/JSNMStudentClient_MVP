@@ -27,10 +27,12 @@ public class MainPresenterlmp {
         share = new sharePreference(iViews);
         iMainViews.getName(share.getStringPreference("userName"));
         iMainViews.getnick("暂无");
+        iMainViews.getNews();
     }
 
     public void exitUser() {
         share.SavePreference("isLogin", false);
         iMainViews.exitUser();
     }
+
 }
