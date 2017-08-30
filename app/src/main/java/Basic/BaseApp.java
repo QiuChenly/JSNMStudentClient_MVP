@@ -131,6 +131,9 @@ abstract public class BaseApp extends Activity implements View.OnClickListener{
     public <T> void showToast(T Message) {
         Toast.makeText(this, Message.toString(), Toast.LENGTH_SHORT).show();
     }
+    public <T> void showToast(T Message,boolean isLong) {
+        Toast.makeText(this, Message.toString(), isLong?Toast.LENGTH_LONG:Toast.LENGTH_SHORT).show();
+    }
 
     public <T> void startActivity(Class<T> classA,boolean AllowFinish){
         startActivity(new Intent(this,classA));

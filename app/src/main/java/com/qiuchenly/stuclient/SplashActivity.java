@@ -123,7 +123,7 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
 
     @Override
     public void LoginFailed(String reason) {
-        showToast("呀~快速登录失效啦!请您手动登录~\n服务器返回信息:" + reason);
+        showToast("呀~快速登录失效啦!请您手动登录~\n服务器返回信息:" + reason,true);
         share.SavePreference("session", "");
         share.SavePreference("isLogin", false);
         startActivity(LoginActivity.class, true);

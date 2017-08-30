@@ -18,10 +18,9 @@ import static Basic.API.utils.*;
  */
 
 public class LoginAPI {
-    /**
+    /**,
      * 更新必须参数
-     * <p>
-     * // * @param ResponseBody 返回的网页数据
+     * @param ResponseBody 返回的网页数据
      */
 //    public void UpdataViewState(String ResponseBody) {
 //        _viewstate = GetSubText(ResponseBody, "id=\"__VIEWSTATE\" value=\"", "\"", 0);
