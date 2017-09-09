@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.TextView;
 
 import com.qiuchenly.stuclient.presenter.mPresenterImp;
@@ -115,7 +116,7 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
     }
 
     @Override
-    public void LoginSuccess(String name, boolean isLeader, String session) {
+    public void LoginSuccess(String name,String session,int code) {
         showToast("Hi 欢迎回来 " + userName);
         share.SavePreference("isLogin", true);
         startActivity(Main.class, true);
@@ -127,11 +128,6 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
         share.SavePreference("session", "");
         share.SavePreference("isLogin", false);
         startActivity(LoginActivity.class, true);
-    }
-
-    @Override
-    public void switchVcode(Bitmap Vcode) {
-//无需实现此方法
     }
 
     @Override

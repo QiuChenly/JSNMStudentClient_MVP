@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import Basic.API.LoginAPI;
 import Basic.API.LoginResult;
+import Basic.API.Processresult;
 import Basic.API.getImage;
 
 /**
@@ -16,15 +17,14 @@ import Basic.API.getImage;
 public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     @Override
     public void mLoginUser(final String userName, final String passWord,
-                           final String vCode, final RequestOnClickListener listener) {
+                          final RequestOnClickListener listener) {
         new Thread() {
             @Override
             public void run() {
-                try {
-                    login(userName, passWord, vCode, new LoginResult() {
+                    loginH5(userName, passWord, new LoginResult() {
                         @Override
-                        public void onSuccess(String StudentName, boolean isLeader, String session) {
-                            listener.onSuccess(StudentName, isLeader, session);
+                        public void onSuccess(String StudentName,String session,int code) {
+                            listener.onSuccess(StudentName, session,code);
                         }
 
                         @Override
@@ -32,42 +32,21 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
                             listener.onFailed(ErrReason);
                         }
                     });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    listener.onFailed("向服务器请求发送异常!");
-                }
             }
         }.start();
 
     }
 
     @Override
-    public void mGetVcode(getImage image) {
-        getImage(image);
+    public void mFastLogin(String session, RequestOnClickListener listener) {
+
     }
 
     @Override
-    public void mFastLogin(final String session, final RequestOnClickListener listener) {
-        new Thread() {
-            @Override
-            public void run() {
-                try {
-                    fastLogin(session, new LoginResult() {
-                        @Override
-                        public void onSuccess(String StudentName, boolean isLeader, String session) {
-                            listener.onSuccess(StudentName, isLeader, session);
-                        }
-
-                        @Override
-                        public void onFailed(String ErrReason) {
-                            listener.onFailed(ErrReason);
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
+    public void sendMsg(String PhoneNum, Processresult res) {
+        new Thread(){}.start();
+        sendSMS(PhoneNum,res);
     }
+
 
 }

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\400d53a963fd2976e0cb7334fa9292397f4e9b16\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50d7b716ae1b8105fa61fc157ced4ec1b88d8f3f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\a855ea2820fb2235178c7b73b1efa014dc1618c2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_08d4b40215accb8a6a82d3ca723b8e52c6fc914b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3908f8ddd3f20922f9c04830769561a69bc944bb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\7ec0948ff07e12b851cc3d420a7b42731d5480fb\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3e647249e0c651c003471f3c2b95fbb56bb2aa07\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\47b693c2cae935f76f71583dc6ebb7af26b726d6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6ad4a9dbb40e286a2682bb8a3001a7096622682e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\635208d5055d47756172e4c42c25e742e70fc00c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7d4f2fafa66b51a5f80f9233c2dcfc63bbce6741\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\b1b438b87e8270234027180ba9c4e66a34cf9cb3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bbade9ccb3b740dd3b1b0beac231c4915efd367e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\727d3f012802df2e6e16bf7217405a58911a5755\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7d3f8c65813108ac3fdd5ae3ba7ed397104926a3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\cd6a6ec94302c2ccc8dcd3e0ffc52906601ff4ab\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b35398e618d7912f642a8ca5d5ed0bb4b1d7157e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\SDK\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_e3186410389132aa133fb8dc35b235bb6d833291\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\d0e978307c43673210eaaad7f279519168b8d819\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_40f653949e44b823c098b9425cd645cec105d089\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\e77aa35ad35a8c5d0c27712badf9cc75a9a37eb5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b20e8880163b3b348b3c2567fd5c62058f81b13a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\SDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_d4565c41d333690beb2e69dbb954781ca12e4541\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\8bc3df732e56730576f628ec9cab5b7ed42f8840\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_97eeef0f8c3b8d55055132e45954f31a65939ce2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="024d02e82415d93ddba9f652d01764d27489b6e8">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0dc180819aab221039b79205f0064b96394400f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\4441d12f90fc0edfbf8859ef477fc140945729fe\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_df4c1985c2f13885fd25e56811836531e6a09ba9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\e6f773746a8ea05abc7f128cdd69d0ee7d3c59d7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_382924f62d261c7863c7bb2ac81a3d6ac4c3b476\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\24a7a04a08a6f5b925626d822bea5f946e8feee9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_81da85c902bf7093b6aeade2e1d6969669d17aa6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.0_a05ce4599aac439d69df4200d617a063aacc67e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\54bbd39ed4735075a8d7d5339715a7694e2bfa71\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e353fc5694c07e07787c6934095f4974a5472273\classes.dex" />
+    </item>
+
+</items>

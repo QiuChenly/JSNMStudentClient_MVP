@@ -57,7 +57,6 @@ abstract public class BaseApp extends Activity implements View.OnClickListener{
         }
         SetOnClickListener();
         loadComplete();
-
     }
 
     @Override
@@ -73,6 +72,14 @@ abstract public class BaseApp extends Activity implements View.OnClickListener{
 
     public <T extends View> T $(int id,boolean setOnClick){
         T view = (T)findViewById(id);
+        //顺手设置被点击事件
+        if (setOnClick){
+            view.setOnClickListener(this);
+        }
+        return view;
+    }
+    public <T extends View> T $(int id,boolean setOnClick,View views){
+        T view = (T)views.findViewById(id);
         //顺手设置被点击事件
         if (setOnClick){
             view.setOnClickListener(this);

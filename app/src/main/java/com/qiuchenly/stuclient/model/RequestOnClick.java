@@ -1,5 +1,6 @@
 package com.qiuchenly.stuclient.model;
 
+import Basic.API.Processresult;
 import Basic.API.getImage;
 
 /**
@@ -11,9 +12,9 @@ import Basic.API.getImage;
 
 
 public interface RequestOnClick {
-    void mLoginUser(String userName, String passWord, String vCode, RequestOnClickListener listener);
-
-    void mGetVcode(getImage image);
+    void mLoginUser(String userName, String passWord,RequestOnClickListener listener);
 
     void mFastLogin(String session, RequestOnClickListener listener);
+
+    void sendMsg(String PhoneNum, Processresult res);
 }

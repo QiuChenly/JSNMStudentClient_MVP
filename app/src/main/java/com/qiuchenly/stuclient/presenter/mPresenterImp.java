@@ -10,6 +10,7 @@ import com.qiuchenly.stuclient.model.RequestOnClicklmp;
 import com.qiuchenly.stuclient.view.iViews;
 
 import Basic.API.LoginAPI;
+import Basic.API.Processresult;
 import Basic.API.getImage;
 
 
@@ -37,12 +38,12 @@ public class mPresenterImp {
     public void fastLogin(String session) {
         requestOnClick.mFastLogin(session, new RequestOnClickListener() {
             @Override
-            public void onSuccess(final String name, final boolean isLeader, final String session) {
+            public void onSuccess(final String name,final String session,final int code) {
                 //线程安全
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iViews.LoginSuccess(name, isLeader, session);
+                        iViews.LoginSuccess(name,  session,code );
                     }
                 });
             }
@@ -59,15 +60,15 @@ public class mPresenterImp {
         });
     }
 
-    public void login(String userName, String passWord, String vCode) {
-        requestOnClick.mLoginUser(userName, passWord, vCode, new RequestOnClickListener() {
+    public void login(String userName, String passWord) {
+        requestOnClick.mLoginUser(userName, passWord, new RequestOnClickListener() {
             @Override
-            public void onSuccess(final String name, final boolean isLeader, final String session) {
+            public void onSuccess(final String name, final String session,final int code) {
                 //线程安全
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iViews.LoginSuccess(name, isLeader, session);
+                        iViews.LoginSuccess(name,session,code);
                     }
                 });
             }
@@ -84,23 +85,32 @@ public class mPresenterImp {
         });
     }
 
-    public void getcode() {
-        requestOnClick.mGetVcode(new getImage() {
+    public void sendMsg(final String PhoneNum, final Processresult processresult){
+        new Thread(){
             @Override
-            public void onSuccess(final Bitmap bitmap) {
-                handler.post(new Runnable() {
+            public void run() {
+                requestOnClick.sendMsg(PhoneNum, new Processresult() {
                     @Override
-                    public void run() {
-                        iViews.switchVcode(bitmap);
+                    public void onFailed() {
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                processresult.onFailed();
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onSuccess(final String randomKey) {
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                processresult.onSuccess(randomKey);
+                            }
+                        });
                     }
                 });
             }
-
-            @Override
-            public void onFailed(String reason) {
-                iViews.showToasts(reason);
-            }
-        });
-
+        }.start();
     }
 }
