@@ -78,13 +78,12 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
                         startAnimation(btn, true, 6);
                         break;
                     case 6:
+                        //TODO 未完成的快速登陆功能
                         if (isLogin = share.getBooleanPreference("isLogin")) {
                             userName = share.getStringPreference("userName");
-//                            id = share.getStringPreference("id");
-//                            password = share.getStringPreference("password");
                             session = share.getStringPreference("session");
-                            httpClient.setCookies(session);
-                            presenterImp.fastLogin(session);
+                            presenterImp.setToken(session);
+                            presenterImp.fastLogin();
                         } else {
                             startActivity(LoginActivity.class, true);
                         }
@@ -116,8 +115,9 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
     }
 
     @Override
-    public void LoginSuccess(String name,String session,int code) {
+    public void LoginSuccess(String name,int code,String token) {
         showToast("Hi 欢迎回来 " + userName);
+        share.SavePreference("session",token);
         share.SavePreference("isLogin", true);
         startActivity(Main.class, true);
     }

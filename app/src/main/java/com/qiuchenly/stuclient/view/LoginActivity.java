@@ -57,6 +57,13 @@ public class LoginActivity extends BaseApp implements iViews, iViewGetPreference
         circularProgressButton.setIndeterminateProgressMode(true);
         tLogin = $(R.id.tlogin_user, false, list.get(0));
         tPass = $(R.id.tlogin_pass, false, list.get(0));
+
+
+        /**
+         * TestStart
+         */
+        tLogin.setText("201613549");
+        tPass.setText("068411");
         tForgetPass = $(R.id.tForgetPassword, true, list.get(0));
         tNoLoginIn = $(R.id.tNoLoginIn, true, list.get(0));
         fcancelbind = $(R.id.fcancelbind, true, list.get(1));
@@ -137,7 +144,7 @@ public class LoginActivity extends BaseApp implements iViews, iViewGetPreference
     }
 
     @Override
-    public void LoginSuccess(final String name, String session, int code) {
+    public void LoginSuccess(final String name , int code,String token) {
         if (code == 100004) {
             switchViews.setCurrentItem(1);
             circularProgressButton.setProgress(0);
@@ -145,7 +152,7 @@ public class LoginActivity extends BaseApp implements iViews, iViewGetPreference
             return;
         }
         circularProgressButton.setProgress(100);
-        share.SavePreference("session", session);
+        share.SavePreference("session", token);
         share.SavePreference("userName", name);
         share.SavePreference("id", tLogin.getText().toString());
         share.SavePreference("password", tPass.getText().toString());

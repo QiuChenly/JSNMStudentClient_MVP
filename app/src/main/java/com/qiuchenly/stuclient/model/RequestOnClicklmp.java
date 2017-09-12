@@ -17,36 +17,59 @@ import Basic.API.getImage;
 public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     @Override
     public void mLoginUser(final String userName, final String passWord,
-                          final RequestOnClickListener listener) {
+                           final RequestOnClickListener listener) {
         new Thread() {
             @Override
             public void run() {
-                    loginH5(userName, passWord, new LoginResult() {
-                        @Override
-                        public void onSuccess(String StudentName,String session,int code) {
-                            listener.onSuccess(StudentName, session,code);
-                        }
+                loginH5(userName, passWord, new LoginResult() {
+                    @Override
+                    public void onSuccess(String StudentName, int code, String token) {
+                        listener.onSuccess(StudentName, code, token);
+                    }
 
-                        @Override
-                        public void onFailed(String ErrReason) {
-                            listener.onFailed(ErrReason);
-                        }
-                    });
+                    @Override
+                    public void onFailed(String ErrReason) {
+                        listener.onFailed(ErrReason);
+                    }
+                });
             }
         }.start();
 
     }
 
     @Override
-    public void mFastLogin(String session, RequestOnClickListener listener) {
+    public void mFastLogin(final RequestOnClickListener listener) {
+        new Thread() {
+            @Override
+            public void run() {
+                skipLogin(new LoginResult() {
+                    @Override
+                    public void onSuccess(String StudentName, int code, String token) {
+                        listener.onSuccess(StudentName, code, token);
+                    }
+
+                    @Override
+                    public void onFailed(String ErrReason) {
+                        listener.onFailed(ErrReason);
+                    }
+                });
+            }
+        }.start();
+    }
+
+    @Override
+    public void sendMsg(final String PhoneNum, final Processresult res) {
+        new Thread() {
+            @Override
+            public void run() {
+                sendSMS(PhoneNum, res);
+            }
+        }.start();
 
     }
 
     @Override
-    public void sendMsg(String PhoneNum, Processresult res) {
-        new Thread(){}.start();
-        sendSMS(PhoneNum,res);
+    public void setToken(String token) {
+        super.setToken(token);
     }
-
-
 }

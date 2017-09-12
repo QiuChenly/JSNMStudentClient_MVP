@@ -8,7 +8,7 @@ package com.qiuchenly.stuclient.model;
  */
 
 public interface RequestOnClickListener {
-    void onSuccess(String name, String session,int code);
+    void onSuccess(String name, int code,String token);
 
     void onFailed(String errReson);
 }

@@ -26,8 +26,6 @@ public class mPresenterImp {
     RequestOnClick requestOnClick = null;
     private Handler handler = null;
 
-    private LoginAPI api = null;
-
     public mPresenterImp(com.qiuchenly.stuclient.view.iViews iViews) {
         this.iViews = iViews;
         requestOnClick = new RequestOnClicklmp();
@@ -35,15 +33,15 @@ public class mPresenterImp {
     }
 
 
-    public void fastLogin(String session) {
-        requestOnClick.mFastLogin(session, new RequestOnClickListener() {
+    public void fastLogin() {
+        requestOnClick.mFastLogin( new RequestOnClickListener() {
             @Override
-            public void onSuccess(final String name,final String session,final int code) {
+            public void onSuccess(final String name,final int code,final String token) {
                 //线程安全
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iViews.LoginSuccess(name,  session,code );
+                        iViews.LoginSuccess(name,code,token);
                     }
                 });
             }
@@ -63,12 +61,12 @@ public class mPresenterImp {
     public void login(String userName, String passWord) {
         requestOnClick.mLoginUser(userName, passWord, new RequestOnClickListener() {
             @Override
-            public void onSuccess(final String name, final String session,final int code) {
+            public void onSuccess(final String name, final int code,final String token) {
                 //线程安全
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iViews.LoginSuccess(name,session,code);
+                        iViews.LoginSuccess(name,code,token);
                     }
                 });
             }
@@ -112,5 +110,10 @@ public class mPresenterImp {
                 });
             }
         }.start();
+    }
+
+    public void setToken(String token)
+    {
+        requestOnClick.setToken(token);
     }
 }

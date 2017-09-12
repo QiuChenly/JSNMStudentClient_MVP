@@ -10,11 +10,9 @@ import android.graphics.Bitmap;
  */
 
 public interface iViews {
-    void LoginSuccess(String name, String session,int Code);
+    void LoginSuccess(String name ,int Code,String token);
 
     void LoginFailed(String reason);
 
     <T> void showToasts(T msg);
-
-
 }
