@@ -3,10 +3,12 @@ package com.qiuchenly.stuclient.view.MainView.presenter;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.qiuchenly.stuclient.model.RequestOnClick;
+import com.qiuchenly.stuclient.presenter.mPresenterImp;
 import com.qiuchenly.stuclient.view.MainView.iMainViews;
 
-import Basic.SharedPreferences.iViewGetPreference;
-import Basic.SharedPreferences.sharePreference;
+import com.qiuchenly.stuclient.Basic.SharedPreferences.iViewGetPreference;
+import com.qiuchenly.stuclient.Basic.SharedPreferences.sharePreference;
 
 /**
  * Author : QiuChenLy
@@ -19,14 +21,17 @@ public class MainPresenterlmp {
     iMainViews iMainViews = null;
     private Handler handler = null;
     sharePreference share = null;
+    RequestOnClick requestOnClick = null;
+
 
     public MainPresenterlmp(com.qiuchenly.stuclient.view.MainView.iMainViews iMainViews,
                             iViewGetPreference iViews) {
         this.iMainViews = iMainViews;
         handler = new Handler(Looper.getMainLooper());
         share = new sharePreference(iViews);
-        iMainViews.getName(share.getStringPreference("userName"));
-        iMainViews.getnick("暂无");
+        requestOnClick = mPresenterImp.requestOnClick;
+        iMainViews.getName(requestOnClick.getLoginRes().userBaseInfo.realName);
+        iMainViews.getnick(requestOnClick.getLoginRes().userBaseInfo.collegeName);
         iMainViews.getNews();
     }
 

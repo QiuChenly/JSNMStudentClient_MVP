@@ -1,4 +1,4 @@
-package Basic.httpClient;
+package com.qiuchenly.stuclient.Basic.httpClient;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,6 +10,8 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.annotation.RequiresApi;
 
+import com.qiuchenly.stuclient.Basic.httpClient.CookieStore.CookieStores;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,12 +21,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import Basic.httpClient.CookieStore.CookieStores;
-import Basic.httpClient.CookieStore.iCookieManage;
 
 /**
  * Auther: cheny

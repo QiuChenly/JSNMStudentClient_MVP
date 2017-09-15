@@ -1,4 +1,4 @@
-package Basic.API;
+package com.qiuchenly.stuclient.Basic.API;
 
 /**
  * Created by QiuChenly on 2017/9/9.

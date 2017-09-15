@@ -8,10 +8,8 @@ import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,9 +20,9 @@ import com.qiuchenly.stuclient.view.LoginActivity;
 import com.qiuchenly.stuclient.view.MainView.presenter.MainPresenterlmp;
 import com.qiuchenly.stuclient.view.MainView.rvadapter.recyclerViewAdapter;
 
-import Basic.BaseApp;
-import Basic.SharedPreferences.iViewGetPreference;
-import Basic.statusbar.StatusBarUtil;
+import com.qiuchenly.stuclient.Basic.BaseApp;
+import com.qiuchenly.stuclient.Basic.SharedPreferences.iViewGetPreference;
+import com.qiuchenly.stuclient.Basic.statusbar.StatusBarUtil;
 
 /**
  * View层交互处理
@@ -33,7 +31,7 @@ import Basic.statusbar.StatusBarUtil;
 
 public class Main extends BaseApp implements iMainViews, iViewGetPreference {
     DrawerLayout lDrawerlayout;
-    MainPresenterlmp mainPresenterlmp = null;
+   public MainPresenterlmp mainPresenterlmp = null;
     ImageView iv_userPic, iv_HeadImage;
     TextView tuserName, tuserNick, nav_title_username;
 
@@ -49,6 +47,7 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
         StatusBarUtil.setColorNoTranslucentForDrawerLayout(this, lDrawerlayout,
                 Color.argb(0, 0, 0, 0));
         mainPresenterlmp = new MainPresenterlmp(this, this);
+
 
         recyclerViewAdapter adapter=new recyclerViewAdapter();
         rv_showNews.setHasFixedSize(false);

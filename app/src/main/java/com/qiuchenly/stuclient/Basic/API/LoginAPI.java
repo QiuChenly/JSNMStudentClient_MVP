@@ -1,17 +1,13 @@
-package Basic.API;
+package com.qiuchenly.stuclient.Basic.API;
 
 import com.google.gson.Gson;
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.sendMsgRes;
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.submitPhoneNum;
+import com.qiuchenly.stuclient.Basic.httpClient.ResponseData;
+import com.qiuchenly.stuclient.Basic.httpClient.httpClient;
 
 import java.io.IOException;
-import java.util.Random;
-
-import Basic.API.HttpResponseUtils.loginRes;
-import Basic.API.HttpResponseUtils.sendMsgRes;
-import Basic.API.HttpResponseUtils.submitPhoneNum;
-import Basic.httpClient.ResponseData;
-import Basic.httpClient.httpClient;
-
-import static Basic.API.utils.*;
 
 /**
  * Author : QiuChenLy
@@ -29,7 +25,7 @@ public class LoginAPI {
     private sendMsgRes MsgResloginRes;
 
     private String token = "";
-    private loginRes loginRes;
+    protected com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes loginRes;
 
     public String getToken() {
         return token;
@@ -108,7 +104,7 @@ public class LoginAPI {
         }
     }
 
-    submitPhoneNum submitPhoneNum;
+    com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.submitPhoneNum submitPhoneNum;
 
     /**
      * 提交手机号码
@@ -119,7 +115,7 @@ public class LoginAPI {
         String currentMillis = System.currentTimeMillis() + "";
         String url = "http://app.jsahvc.edu.cn/baseCampus/password/backPwdMobile.do ";
         String data = "{\"appKey\":\"" + appKey + "\",\"param\":\"{\\\"phone\\\":\\\"" + phoneNum + "\\\",\\\"" +
-                "username\\\":\\\"" + loginRes.userLoginInfo.userName + "\\\",\\\"randomKey\\\":" + MsgResloginRes.randomKey + ",\\\"uuid\\\":\\\"fbd4e14aa6bd7a7d\\\",\\\"schoolId\\\":" + schoolId + "}\",\"time\":" + currentMillis + ",\"secure\":0,\"sign\":\"" + md5("appKey=" + appKey + "&param={\"phone\":\"" + phoneNum + "\",\"username\":\"" + loginRes.userLoginInfo.userName + "\",\"randomKey\":" + MsgResloginRes.randomKey + ",\"uuid\":\"fbd4e14aa6bd7a7d\",\"schoolId\":" + schoolId + "}&secure=0&time=" + currentMillis) + "\"}";
+                "username\\\":\\\"" + loginRes.userLoginInfo.userName + "\\\",\\\"randomKey\\\":" + MsgResloginRes.randomKey + ",\\\"uuid\\\":\\\"fbd4e14aa6bd7a7d\\\",\\\"schoolId\\\":" + schoolId + "}\",\"time\":" + currentMillis + ",\"secure\":0,\"sign\":\"" + utils.md5("appKey=" + appKey + "&param={\"phone\":\"" + phoneNum + "\",\"username\":\"" + loginRes.userLoginInfo.userName + "\",\"randomKey\":" + MsgResloginRes.randomKey + ",\"uuid\":\"fbd4e14aa6bd7a7d\",\"schoolId\":" + schoolId + "}&secure=0&time=" + currentMillis) + "\"}";
         //Sign算法：appKey=GiITvn&param={"phone":"18888888888","username":"201513043","randomKey":368969,"uuid":"fbd4e14aa6bd7a7d","schoolId":194}&secure=0&time=1504950564719
         //Content-Type: application/json;charset=UTF-8
         ResponseData res = null;
@@ -174,7 +170,7 @@ public class LoginAPI {
     public void skipLogin(LoginResult loginResult) {
         long currentMillis = System.currentTimeMillis();
         String url = "http://app.jsahvc.edu.cn/baseCampus/login/skipLogin.do";
-        String data = "{\"appKey\":\"" + appKey + "\",\"param\":\"{\\\"uuId\\\":\\\"" + UUID + "\\\"}\",\"time\":" + currentMillis + ",\"secure\":0,\"sign\":\"" + md5("appKey=" + appKey + "&param={\"uuId\":\"" + UUID + "\"}&secure=0&time=" + currentMillis) + "\"}";
+        String data = "{\"appKey\":\"" + appKey + "\",\"param\":\"{\\\"uuId\\\":\\\"" + UUID + "\\\"}\",\"time\":" + currentMillis + ",\"secure\":0,\"sign\":\"" + utils.md5("appKey=" + appKey + "&param={\"uuId\":\"" + UUID + "\"}&secure=0&time=" + currentMillis) + "\"}";
         String RequestHeader = "token: " + token + "\n" +
                 "Content-Type: application/json;charset=UTF-8\n";
 
@@ -186,10 +182,10 @@ public class LoginAPI {
             e.printStackTrace();
         }
 
-        loginRes ret = resolveJson(res.responseText, loginRes.class);
-        if (ret.msgState == 1) {
-            this.token = ret.token[0] + "_" + ret.token[1];
-            loginResult.onSuccess(ret.userBaseInfo.realName, 1, this.token);
+         loginRes = resolveJson(res.responseText, loginRes.class);
+        if (loginRes.msgState == 1) {
+            this.token = loginRes.token[0] + "_" + loginRes.token[1];
+            loginResult.onSuccess(loginRes.userBaseInfo.realName, 1, this.token);
         } else {
             loginResult.onFailed("快速登录失败!请重新登录");
         }
@@ -250,7 +246,7 @@ public class LoginAPI {
                 "{\"userName\":\"" + user + "\",\"password\":\"" + pass + "\",\"" +
                 "uuId\":\"" + UUID + "\",\"schoolId\":\"" + schoolId + "\"" +
                 "}&secure=0&time=" + currentMillis;
-        return md5(URL);
+        return utils.md5(URL);
     }
 
     /**
@@ -264,7 +260,7 @@ public class LoginAPI {
     private String getSign_SendMsg(String phoneNum, String times, String userID) {
         String u = "appKey=GiITvn&param={\"min\":5,\"identification\":2,\"userName\":\"" + userID + "\"," +
                 "\"mobile\":\"" + phoneNum + "\",\"schoolId\":" + schoolId + "}&secure=0&time=" + times;
-        return md5(u);
+        return utils.md5(u);
     }
 
     public void getNews() {
@@ -274,7 +270,7 @@ public class LoginAPI {
         //get Sign Value
         String sign = "appKey=" + appKey + "&param={\"offset\":1}&secure=0&time=" + currentTime;
 
-        String data = "{\"appKey\":\"GiITvn\",\"param\":\"{\\\"offset\\\":1}\",\"time\":" + currentTime + ",\"secure\":0,\"sign\":\"" + md5(sign) + "\"}";
+        String data = "{\"appKey\":\"GiITvn\",\"param\":\"{\\\"offset\\\":1}\",\"time\":" + currentTime + ",\"secure\":0,\"sign\":\"" + utils.md5(sign) + "\"}";
 
 
     }

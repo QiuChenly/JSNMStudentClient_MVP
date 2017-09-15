@@ -1,15 +1,18 @@
-package Basic;
+package com.qiuchenly.stuclient.Basic;
 
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.solver.Cache;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.qiuchenly.stuclient.presenter.mPresenterImp;
 
 /**
  * Author  : QiuChenLy
@@ -30,7 +33,6 @@ abstract public class BaseApp extends Activity implements View.OnClickListener{
 
     //设置透明状态栏
     private boolean setStatusBarAlpha = true;
-
 
     public BaseApp(boolean setDoubleClickReturn, boolean setActionBarDisable, boolean setStatusBarAlpha) {
         this.setDoubleClickReturn = setDoubleClickReturn;

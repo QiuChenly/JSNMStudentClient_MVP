@@ -1,4 +1,4 @@
-package Basic.SharedPreferences;
+package com.qiuchenly.stuclient.Basic.SharedPreferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;

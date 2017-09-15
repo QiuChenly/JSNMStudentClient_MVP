@@ -1,4 +1,4 @@
-package Basic.httpClient.CookieStore;
+package com.qiuchenly.stuclient.Basic.httpClient.CookieStore;
 
 /**
  * Author : QiuChenLy

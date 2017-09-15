@@ -1,11 +1,9 @@
 package com.qiuchenly.stuclient.model;
 
-import java.io.IOException;
-
-import Basic.API.LoginAPI;
-import Basic.API.LoginResult;
-import Basic.API.Processresult;
-import Basic.API.getImage;
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
+import com.qiuchenly.stuclient.Basic.API.LoginAPI;
+import com.qiuchenly.stuclient.Basic.API.LoginResult;
+import com.qiuchenly.stuclient.Basic.API.Processresult;
 
 /**
  * Author : QiuChenLy
@@ -72,4 +70,11 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     public void setToken(String token) {
         super.setToken(token);
     }
+
+    @Override
+    public loginRes getLoginRes() {
+        return super.loginRes;
+    }
+
+
 }

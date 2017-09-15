@@ -1,6 +1,5 @@
 package com.qiuchenly.stuclient.presenter;
 
-import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -9,9 +8,7 @@ import com.qiuchenly.stuclient.model.RequestOnClickListener;
 import com.qiuchenly.stuclient.model.RequestOnClicklmp;
 import com.qiuchenly.stuclient.view.iViews;
 
-import Basic.API.LoginAPI;
-import Basic.API.Processresult;
-import Basic.API.getImage;
+import com.qiuchenly.stuclient.Basic.API.Processresult;
 
 
 /**
@@ -23,7 +20,7 @@ import Basic.API.getImage;
 
 public class mPresenterImp {
     private iViews iViews = null;
-    RequestOnClick requestOnClick = null;
+  public  static RequestOnClick requestOnClick = null;
     private Handler handler = null;
 
     public mPresenterImp(com.qiuchenly.stuclient.view.iViews iViews) {

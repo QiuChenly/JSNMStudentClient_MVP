@@ -1,4 +1,4 @@
-package Basic.API.HttpResponseUtils;
+package com.qiuchenly.stuclient.Basic.API.HttpResponseUtils;
 
 /**
  * Created by QiuChenly on 2017/9/10.

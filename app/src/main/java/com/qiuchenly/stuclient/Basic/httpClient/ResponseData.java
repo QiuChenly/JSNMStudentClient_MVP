@@ -1,4 +1,4 @@
-package Basic.httpClient;
+package com.qiuchenly.stuclient.Basic.httpClient;
 
 /**
  * Auther: cheny

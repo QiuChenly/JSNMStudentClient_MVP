@@ -1,4 +1,4 @@
-package Basic.statusbar;
+package com.qiuchenly.stuclient.Basic.statusbar;
 
 import android.content.Context;
 import android.util.AttributeSet;

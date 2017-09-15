@@ -20,10 +20,10 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import Basic.API.Processresult;
-import Basic.BaseApp;
-import Basic.SharedPreferences.iViewGetPreference;
-import Basic.SharedPreferences.sharePreference;
+import com.qiuchenly.stuclient.Basic.API.Processresult;
+import com.qiuchenly.stuclient.Basic.BaseApp;
+import com.qiuchenly.stuclient.Basic.SharedPreferences.iViewGetPreference;
+import com.qiuchenly.stuclient.Basic.SharedPreferences.sharePreference;
 
 public class LoginActivity extends BaseApp implements iViews, iViewGetPreference, View.OnTouchListener,Processresult {
     com.dd.CircularProgressButton circularProgressButton = null, bBindBtn;

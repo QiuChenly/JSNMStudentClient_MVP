@@ -1,4 +1,4 @@
-package Basic.API;
+package com.qiuchenly.stuclient.Basic.API;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

@@ -1,4 +1,4 @@
-package Basic.API;
+package com.qiuchenly.stuclient.Basic.API;
 
 import android.graphics.Bitmap;
 

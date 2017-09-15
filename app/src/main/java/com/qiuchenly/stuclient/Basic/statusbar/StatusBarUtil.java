@@ -1,4 +1,4 @@
-package Basic.statusbar;
+package com.qiuchenly.stuclient.Basic.statusbar;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

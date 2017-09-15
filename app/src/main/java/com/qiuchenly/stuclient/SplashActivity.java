@@ -1,11 +1,9 @@
 package com.qiuchenly.stuclient;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
 import android.widget.TextView;
 
 import com.qiuchenly.stuclient.presenter.mPresenterImp;
@@ -13,10 +11,9 @@ import com.qiuchenly.stuclient.view.LoginActivity;
 import com.qiuchenly.stuclient.view.MainView.Main;
 import com.qiuchenly.stuclient.view.iViews;
 
-import Basic.BaseApp;
-import Basic.SharedPreferences.iViewGetPreference;
-import Basic.SharedPreferences.sharePreference;
-import Basic.httpClient.httpClient;
+import com.qiuchenly.stuclient.Basic.BaseApp;
+import com.qiuchenly.stuclient.Basic.SharedPreferences.iViewGetPreference;
+import com.qiuchenly.stuclient.Basic.SharedPreferences.sharePreference;
 
 public class SplashActivity extends BaseApp implements iViewGetPreference, iViews {
 
@@ -25,7 +22,7 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
     mPresenterImp presenterImp = null;
 
 
-    String userName, id, password;
+    String userName;
     String session;
     boolean isLogin = false;
 
@@ -78,7 +75,6 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
                         startAnimation(btn, true, 6);
                         break;
                     case 6:
-                        //TODO 未完成的快速登陆功能
                         if (isLogin = share.getBooleanPreference("isLogin")) {
                             userName = share.getStringPreference("userName");
                             session = share.getStringPreference("session");
@@ -134,4 +130,5 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
     public <T> void showToasts(T msg) {
 //无需实现
     }
+
 }

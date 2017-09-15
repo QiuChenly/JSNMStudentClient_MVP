@@ -1,7 +1,7 @@
 package com.qiuchenly.stuclient.model;
 
-import Basic.API.Processresult;
-import Basic.API.getImage;
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
+import com.qiuchenly.stuclient.Basic.API.Processresult;
 
 /**
  * Author : QiuChenLy
@@ -19,4 +19,6 @@ public interface RequestOnClick {
     void sendMsg(String PhoneNum, Processresult res);
 
     void setToken(String token);
+
+    loginRes getLoginRes();
 }
