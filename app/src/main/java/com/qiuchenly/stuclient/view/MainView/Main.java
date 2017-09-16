@@ -61,16 +61,7 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference, new
         mainPresenterlmp = new MainPresenterImp(this, this);
 
 
-        recyclerViewAdapter adapterA = new recyclerViewAdapter(this,null);
-        rv_showNews.setHasFixedSize(false);
-        rv_showNews.setLayoutManager(new LinearLayoutManager(this));
-        rv_showNews.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                outRect.bottom = 5;
-            }
-        });
-        rv_showNews.setAdapter(adapterA);
+        mainPresenterlmp.getSchoolNews();
     }
 
     @Override
@@ -157,7 +148,45 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference, new
 
     @Override
     public void getSchoolNews(ret_news ret) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(this, ret);
+
+
+        recyclerViewAdapter adapterA = new recyclerViewAdapter(this,ret);
+        rv_showNews.setHasFixedSize(false);
+        rv_showNews.setLayoutManager(new LinearLayoutManager(this));
+        rv_showNews.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+                outRect.bottom = 5;
+            }
+        });
+        rv_showNews.setAdapter(adapterA);
+    }
+
+    @SuppressLint("HandlerLeak")
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case SWITCHPICTURE:
+                    if (msg.arg1 != 0) {
+                        nav_SchoolNews.setCurrentItem(msg.arg1);
+                    } else {
+                        nav_SchoolNews.setCurrentItem(0, false);
+                    }
+                    break;
+            }
+        }
+    };
+
+    @Override
+    public Context getInstance() {
+        return this;
+    }
+
+    @Override
+    public void nav_news(ViewPager v,ret_news ret) {
+        nav_SchoolNews = v;// $(R.id.nav_SchoolNews, false);
+                ViewPagerAdapter adapter = new ViewPagerAdapter(this, ret);
         nav_SchoolNews.setPageTransformer(true, new PagerAnimation());
         nav_SchoolNews.setAdapter(adapter);
         nav_SchoolNews.setOffscreenPageLimit(3);
@@ -183,32 +212,5 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference, new
             }
         };
         timer.schedule(task, 5000, 5000);
-    }
-
-    @SuppressLint("HandlerLeak")
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case SWITCHPICTURE:
-                    if (msg.arg1 != 0) {
-                        nav_SchoolNews.setCurrentItem(msg.arg1);
-                    } else {
-                        nav_SchoolNews.setCurrentItem(0, false);
-                    }
-                    break;
-            }
-        }
-    };
-
-    @Override
-    public Context getInstance() {
-        return this;
-    }
-
-    @Override
-    public void nav_news(ViewPager v) {
-        nav_SchoolNews = v;// $(R.id.nav_SchoolNews, false);
-        mainPresenterlmp.getSchoolNews();
     }
 }

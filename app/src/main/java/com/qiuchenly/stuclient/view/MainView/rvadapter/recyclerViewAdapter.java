@@ -1,20 +1,22 @@
 package com.qiuchenly.stuclient.view.MainView.rvadapter;
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.ret_news;
+import com.qiuchenly.stuclient.Basic.httpClient.httpClient;
 import com.qiuchenly.stuclient.R;
 import com.qiuchenly.stuclient.view.MainView.news_interface;
-import com.qiuchenly.stuclient.view.MainView.presenter.MainPresenterImp;
+
+import java.io.IOException;
 
 /**
  * Author : QiuChenLy
@@ -24,18 +26,14 @@ import com.qiuchenly.stuclient.view.MainView.presenter.MainPresenterImp;
  */
 
 public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapter.VH> {
-
-    String[] arr = new String[]{
-            "校级公告", "学院公告", "年级提示", "活动预告", "我的消息", "热点关注"
-    };
     news_interface inew = null;
-    MainPresenterImp MainPresenterImp;
     ret_news ret_news;
+    Handler handler;
 
-    public recyclerViewAdapter(news_interface iNews, MainPresenterImp MainPresenterImp) {
+    public recyclerViewAdapter(news_interface iNews, ret_news ret_news) {
         inew = iNews;
-        this.MainPresenterImp = MainPresenterImp;
-        this.MainPresenterImp.getSchoolNews();
+        this.ret_news = ret_news;
+        handler = new Handler(Looper.getMainLooper());
     }
 
     @Override
@@ -43,7 +41,7 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
         View v;
         if (viewType == 0) {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_header, parent, false);
-            inew.nav_news((ViewPager) v.findViewById(R.id.nav_SchoolNews));
+            inew.nav_news((ViewPager) v.findViewById(R.id.nav_SchoolNews), ret_news);
         } else {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_normal_view, parent, false);
         }
@@ -51,16 +49,41 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(VH h, int position) {
+    public void onBindViewHolder(final VH h, int position) {
         if (position == 0) {
             return;
         }
-        h.rv_title.setText(arr[position - 1]);
+        if (ret_news.newsList[position + 2].imgNameList.length >= 1) {
+            h.rv_image.setVisibility(View.VISIBLE);
+            final String url = ret_news.newsList[position + 2].imgNameList[0].replace("http://lantuservice.com/mobilecampus/", "");
+            new Thread() {
+                @Override
+                public void run() {
+                    Bitmap bit = null;
+                    try {
+                        bit = httpClient.Request_Image("http://lantuservice.com/mobilecampus/" + url);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    final Bitmap finalBit = bit;
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            h.rv_image.setImageBitmap(finalBit);
+                        }
+                    });
+                }
+            }.start();
+        }else{
+            h.rv_image.setVisibility(View.GONE);
+        }
+        h.smallTitle.setText(ret_news.newsList[position + 2].realName);
+        h.rv_title.setText(ret_news.newsList[position + 2].title);
     }
 
     @Override
     public int getItemCount() {
-        return arr.length + 1;
+        return ret_news.newsList.length - 2;
     }
 
     class VH extends RecyclerView.ViewHolder {
