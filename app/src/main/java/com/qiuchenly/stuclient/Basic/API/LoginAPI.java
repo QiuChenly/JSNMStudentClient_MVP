@@ -2,6 +2,7 @@ package com.qiuchenly.stuclient.Basic.API;
 
 import com.google.gson.Gson;
 import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.ret_news;
 import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.sendMsgRes;
 import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.submitPhoneNum;
 import com.qiuchenly.stuclient.Basic.httpClient.ResponseData;
@@ -182,7 +183,7 @@ public class LoginAPI {
             e.printStackTrace();
         }
 
-         loginRes = resolveJson(res.responseText, loginRes.class);
+        loginRes = resolveJson(res.responseText, loginRes.class);
         if (loginRes.msgState == 1) {
             this.token = loginRes.token[0] + "_" + loginRes.token[1];
             loginResult.onSuccess(loginRes.userBaseInfo.realName, 1, this.token);
@@ -205,23 +206,23 @@ public class LoginAPI {
         //ret:{"acceptSecure":null,"curSchoolId":0,"msg":null,"msgState":1,"secure":0,"time":0}
     }
 
-    public loginRes getUserInfo(){
-        String url="http://app.jsahvc.edu.cn/baseCampus/user/getUserInfo.do";
-        String requestHeader="token: "+token+"\n" +
+    public loginRes getUserInfo() {
+        String url = "http://app.jsahvc.edu.cn/baseCampus/user/getUserInfo.do";
+        String requestHeader = "token: " + token + "\n" +
                 "Content-Type: application/json;charset=UTF-8\n";
-        String currentMillis=System.currentTimeMillis()+"";
-        String data="{\"appKey\":\""+appKey+"\",\"param\":\"{\\\"userId\\\":"+loginRes.userBaseInfo.userId+",\\\"parentUserName\\\":null}\",\"time\":"+currentMillis+",\"secure\":0,\"sign\":\""+utils.md5("appKey="+appKey+"&param={\"userId\":"+loginRes.userBaseInfo.userId+",\"parentUserName\":null}&secure=0&time="+currentMillis)+"\"}";
+        String currentMillis = System.currentTimeMillis() + "";
+        String data = "{\"appKey\":\"" + appKey + "\",\"param\":\"{\\\"userId\\\":" + loginRes.userBaseInfo.userId + ",\\\"parentUserName\\\":null}\",\"time\":" + currentMillis + ",\"secure\":0,\"sign\":\"" + utils.md5("appKey=" + appKey + "&param={\"userId\":" + loginRes.userBaseInfo.userId + ",\"parentUserName\":null}&secure=0&time=" + currentMillis) + "\"}";
         //{"acceptSecure":null,"curSchoolId":0,"msg":null,"msgState":1,"secure":0,"time":0,"userBaseInfo":{"admitNumber":null,"brithday":null,"campus":null,"childName":null,"cityId":0,"classId":"","classStr":"农业工程系","college":"0","collegeName":"农业工程系","deleted":0,"depart":null,"divisionId":0,"domainId":0,"domainName":"","dqztm":1,"endValue":"500","exp":0,"fullImage":"","grade":null,"headImage":"","inviteCode":null,"jg":null,"majorId":"0902","mobile":"18888888888","mobileList":[],"mobileSecret":2,"mzmc":"汉族","nickName":"","officeId":0,"officeName":"","parentName":null,"publishDomain":1,"publishOffice":1,"qq":"","realName":"陈玉奇","rfid":null,"role":8,"roleLevel":0,"schoolId":194,"sex":1,"startValue":"101","summary":"","sznj":"","tel":"","toNextLevel":70,"userId":19411665,"vipLevel":430,"vipLevelName":"2","xqah":null,"zymc":""},"userLoginInfo":{"mail":"201513043@jsahvc.edu.cn","parentUserName":"201513043","phone":null,"pid":null,"regFrom":"信息中心","schoolCard":null,"securityPassword":null,"sex":1,"tokenValue":null,"userId":19411665,"userName":"201513043","wxUserId":null}}
-        ResponseData res=null;
+        ResponseData res = null;
         try {
-             res=httpClient.Request(url,1,data,"",requestHeader,10000,10000,false);
+            res = httpClient.Request(url, 1, data, "", requestHeader, 10000, 10000, false);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(res==null){
+        if (res == null) {
             return null;
         }
-        com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes ret=resolveJson(res.responseText,loginRes.class);
+        com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes ret = resolveJson(res.responseText, loginRes.class);
         return ret;
     }
 
@@ -294,5 +295,34 @@ public class LoginAPI {
         String data = "{\"appKey\":\"GiITvn\",\"param\":\"{\\\"offset\\\":1}\",\"time\":" + currentTime + ",\"secure\":0,\"sign\":\"" + utils.md5(sign) + "\"}";
 
 
+    }
+
+    public ret_news getSchoolNews() {
+        //Ret Simple
+        //{"acceptSecure":null,"curSchoolId":0,"limit":10,"msg":null,"msgState":1,"newsList":[{"content":"","createTime":1458662400000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["http://lantuservice.com/mobilecampus/t_news/194/148837471388420647965021.jpg"],"isRead":0,"name":null,"newsId":18348,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":1,"siteId":0,"source":null,"summary":"三月牧院，蓝天丽日，禾木竞绿，暖风春韵。3月20日上午,中共中央政治局委员、国务院副总理汪洋在农业部","title":"国务院副总理汪洋莅临我院视察指导","updateTime":1458662400000,"userId":0},{"content":"","createTime":1505232000000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/150527550246920251629231.jpg"],"isRead":0,"name":null,"newsId":24224,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"9 月12日 上午，南通职业大学党委书记秦志林、校长马成荣一行14人来我院考察交流。院党委书记吉文林","title":"南通职业大学秦志林书记一行来我院考察交流","updateTime":null,"userId":0},{"content":"","createTime":1505059200000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/1505095500165315145688.jpg"],"isRead":0,"name":null,"newsId":24214,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"红墙映日喜迎八方学子，绿树摇曳共祝美好明天。 9月 9日 —10日，映照着初秋温煦的阳光，我院迎来了","title":"学院喜迎2017级新同学","updateTime":null,"userId":0},{"content":"","createTime":1504972800000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/150522510051211198310631.jpg"],"isRead":0,"name":null,"newsId":24223,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"9 月7日 下午，江苏省现代农业（水禽）产业技术体系集成创新与推广总体方案论证会在我院召开。在江苏省","title":"省水禽产业技术体系集成创新与推广总体方案论证会在我院召开","updateTime":null,"userId":0},{"content":"","createTime":1504972800000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/150509550461169008686913.jpg"],"isRead":0,"name":null,"newsId":24215,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"9 月8日 下午，学院在行政楼凤凰厅召开了第33个教师节庆祝大会。院党委书记吉文林、院长何正东、副书","title":"学院举行第33个教师节庆祝大会","updateTime":null,"userId":0},{"content":"","createTime":1504800000000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/150518190016055089161316.jpg"],"isRead":0,"name":null,"newsId":24221,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"9 月5日 下午，全国畜牧总站站长、中国饲料工业协会秘书长杨振海，全国畜牧总站牧业发展处处长杨红杰、","title":"全国畜牧总站杨振海站长一行来我院调研","updateTime":null,"userId":0},{"content":"","createTime":1504800000000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/150485790019813805902706.jpg"],"isRead":0,"name":null,"newsId":24208,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"在第三十三个教师节来临之际，江苏省农业委员会给我院发来教师节慰问信。慰问信如下：","title":"江苏省农业委员会给我院发来教师节慰问信","updateTime":null,"userId":0},{"content":"","createTime":1504800000000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/150483990016116846057903.jpg"],"isRead":0,"name":null,"newsId":24202,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"9 月3日 —7日，学院党委书记吉文林、院长何正东和副院长臧大存、郑义在院办、安全保卫处、学生工作处","title":"学院领导深入凤凰路校区生活区检查指导","updateTime":null,"userId":0},{"content":"","createTime":1504713600000,"defaultImageUrl":null,"from":"学校官网","imgNameList":[],"isRead":0,"name":null,"newsId":24200,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"日前，教育部办公厅公布了第二批现代学徒制试点的结果（教职成厅函〔2017〕35号），我院成功入选，试","title":"我院成功入选教育部第二批现代学徒制试点单位","updateTime":null,"userId":0},{"content":"","createTime":1504627200000,"defaultImageUrl":null,"from":"学校官网","imgNameList":["t_news/194/150474990051117533165781.jpg"],"isRead":0,"name":null,"newsId":24201,"newsType":341,"parentId":0,"parm":0,"realName":"学校官网","schoolId":0,"seq":0,"sftop":0,"siteId":0,"source":null,"summary":"9 月5日 下午，在第33个教师节来临之际，全国知名辅导员、大连海事大学博士生导师曲建武教授应邀来我","title":"全国知名辅导员曲建武教授来我院作专题讲座","updateTime":null,"userId":0}],"offset":1,"secure":0,"time":0,"totalPages":15}
+        String url = "http://app.jsahvc.edu.cn/newsCampus/news/getSchoolNews.do";
+        String current = getCurrentMillis();
+        String data = "{\"appKey\":\"GiITvn\",\"param\":\"{\\\"offset\\\":1,\\\"newsType\\\":341}\",\"time\":" + current + ",\"secure\":0,\"sign\":\"" + utils.md5("appKey=" + appKey + "&param={\"offset\":1,\"newsType\":341}&secure=0&time=" + current) + "\"}";
+        ResponseData res = null;
+        try {
+            res = post(url, data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (res == null) {
+            return null;
+        }
+        ret_news ret_new = resolveJson(res.responseText, ret_news.class);
+        return ret_new;
+    }
+
+    ResponseData post(String url, String data) throws IOException {
+        String requestHeader = "token: " + token + "\n" +
+                "Content-Type: application/json;charset=UTF-8\n";
+        return httpClient.Request(url, 1, data, "", requestHeader, 10000, 10000, false);
+    }
+
+    String getCurrentMillis() {
+        return System.currentTimeMillis() + "";
     }
 }

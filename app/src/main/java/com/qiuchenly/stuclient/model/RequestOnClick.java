@@ -23,4 +23,6 @@ public interface RequestOnClick {
     loginRes getLoginRes();
 
     void  getUserInfo(RequestOnClickListener ret);
+
+    void getSchoolNew(RequestOnClickListener requestOnClick) ;
 }

@@ -1,6 +1,7 @@
 package com.qiuchenly.stuclient.model;
 
 import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.ret_news;
 import com.qiuchenly.stuclient.Basic.API.LoginAPI;
 import com.qiuchenly.stuclient.Basic.API.LoginResult;
 import com.qiuchenly.stuclient.Basic.API.Processresult;
@@ -22,7 +23,7 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
                 loginH5(userName, passWord, new LoginResult() {
                     @Override
                     public void onSuccess(String StudentName, int code, String token) {
-                        listener.onSuccess(StudentName, code, token,null);
+                        listener.onSuccess(StudentName, code, token);
                     }
 
                     @Override
@@ -43,7 +44,7 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
                 skipLogin(new LoginResult() {
                     @Override
                     public void onSuccess(String StudentName, int code, String token) {
-                        listener.onSuccess(StudentName, code, token,null);
+                        listener.onSuccess(StudentName, code, token);
                     }
 
                     @Override
@@ -77,21 +78,32 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     }
 
     @Override
-    public void getUserInfo(final RequestOnClickListener rets){
-        new Thread(){
+    public void getUserInfo(final RequestOnClickListener rets) {
+        new Thread() {
             @Override
             public void run() {
-                com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes res=getUserInfo();
+                com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes res = getUserInfo();
 
-                if(res!=null){
-                    rets.onSuccess(null,0,null,res);
-                }
-                else{
+                if (res != null) {
+                    rets.onSuccess(null, 0, null, res);
+                } else {
                     rets.onFailed("访问网络失败!");
                 }
             }
         }.start();
     }
 
-
+    @Override
+    public void getSchoolNew(final RequestOnClickListener requestOnClick) {
+        new Thread(){
+            @Override
+            public void run() {
+                ret_news ret_new= getSchoolNews();
+                if(ret_new!=null){
+                    requestOnClick.onSuccess(null,0,null,ret_new);
+                }else
+                    requestOnClick.onFailed("数据出错!");
+            }
+        }.start();
+    }
 }

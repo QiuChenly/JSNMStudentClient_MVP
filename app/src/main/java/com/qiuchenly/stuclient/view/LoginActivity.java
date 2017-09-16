@@ -58,12 +58,6 @@ public class LoginActivity extends BaseApp implements iViews, iViewGetPreference
         tLogin = $(R.id.tlogin_user, false, list.get(0));
         tPass = $(R.id.tlogin_pass, false, list.get(0));
 
-
-        /**
-         * TestStart
-         */
-        tLogin.setText("201613549");
-        tPass.setText("068411");
         tForgetPass = $(R.id.tForgetPassword, true, list.get(0));
         tNoLoginIn = $(R.id.tNoLoginIn, true, list.get(0));
         fcancelbind = $(R.id.fcancelbind, true, list.get(1));
