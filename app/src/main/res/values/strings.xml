@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">牧院学生系统</string>
+    <string name="app_name">坚决不爱牧院</string>
     <string name="fogetpass">忘记了登录密码?</string>
     <string name="tourin">游客?点我进入 →</string>
     <string name="passhint">密码,默认密码身份证后六位</string>

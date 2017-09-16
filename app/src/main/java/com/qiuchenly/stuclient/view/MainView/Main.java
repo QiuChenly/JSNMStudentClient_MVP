@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
 import com.qiuchenly.stuclient.R;
 import com.qiuchenly.stuclient.view.LoginActivity;
 import com.qiuchenly.stuclient.view.MainView.presenter.MainPresenterlmp;
@@ -122,8 +123,8 @@ public class Main extends BaseApp implements iMainViews, iViewGetPreference {
     }
 
     @Override
-    public void getnick(String nick) {
-        tuserNick.setText(nick);
+    public void getnick(String nick,loginRes ret) {
+        tuserNick.setText(nick+" | "+ret.userLoginInfo.parentUserName);
     }
 
     @Override

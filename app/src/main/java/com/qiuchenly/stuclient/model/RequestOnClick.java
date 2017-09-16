@@ -12,7 +12,7 @@ import com.qiuchenly.stuclient.Basic.API.Processresult;
 
 
 public interface RequestOnClick {
-    void mLoginUser(String userName, String passWord,RequestOnClickListener listener);
+    void mLoginUser(String userName, String passWord, RequestOnClickListener listener);
 
     void mFastLogin(RequestOnClickListener listener);
 
@@ -21,4 +21,6 @@ public interface RequestOnClick {
     void setToken(String token);
 
     loginRes getLoginRes();
+
+    void  getUserInfo(RequestOnClickListener ret);
 }

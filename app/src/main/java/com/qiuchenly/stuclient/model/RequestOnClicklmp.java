@@ -22,7 +22,7 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
                 loginH5(userName, passWord, new LoginResult() {
                     @Override
                     public void onSuccess(String StudentName, int code, String token) {
-                        listener.onSuccess(StudentName, code, token);
+                        listener.onSuccess(StudentName, code, token,null);
                     }
 
                     @Override
@@ -43,7 +43,7 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
                 skipLogin(new LoginResult() {
                     @Override
                     public void onSuccess(String StudentName, int code, String token) {
-                        listener.onSuccess(StudentName, code, token);
+                        listener.onSuccess(StudentName, code, token,null);
                     }
 
                     @Override
@@ -74,6 +74,23 @@ public class RequestOnClicklmp extends LoginAPI implements RequestOnClick {
     @Override
     public loginRes getLoginRes() {
         return super.loginRes;
+    }
+
+    @Override
+    public void getUserInfo(final RequestOnClickListener rets){
+        new Thread(){
+            @Override
+            public void run() {
+                com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes res=getUserInfo();
+
+                if(res!=null){
+                    rets.onSuccess(null,0,null,res);
+                }
+                else{
+                    rets.onFailed("访问网络失败!");
+                }
+            }
+        }.start();
     }
 
 

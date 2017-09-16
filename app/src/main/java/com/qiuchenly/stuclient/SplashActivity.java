@@ -75,9 +75,8 @@ public class SplashActivity extends BaseApp implements iViewGetPreference, iView
                         startAnimation(btn, true, 6);
                         break;
                     case 6:
-                        if (isLogin = share.getBooleanPreference("isLogin")) {
+                        if ((isLogin = share.getBooleanPreference("isLogin")&& (session = share.getStringPreference("session"))!="")) {
                             userName = share.getStringPreference("userName");
-                            session = share.getStringPreference("session");
                             presenterImp.setToken(session);
                             presenterImp.fastLogin();
                         } else {

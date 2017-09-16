@@ -205,6 +205,27 @@ public class LoginAPI {
         //ret:{"acceptSecure":null,"curSchoolId":0,"msg":null,"msgState":1,"secure":0,"time":0}
     }
 
+    public loginRes getUserInfo(){
+        String url="http://app.jsahvc.edu.cn/baseCampus/user/getUserInfo.do";
+        String requestHeader="token: "+token+"\n" +
+                "Content-Type: application/json;charset=UTF-8\n";
+        String currentMillis=System.currentTimeMillis()+"";
+        String data="{\"appKey\":\""+appKey+"\",\"param\":\"{\\\"userId\\\":"+loginRes.userBaseInfo.userId+",\\\"parentUserName\\\":null}\",\"time\":"+currentMillis+",\"secure\":0,\"sign\":\""+utils.md5("appKey="+appKey+"&param={\"userId\":"+loginRes.userBaseInfo.userId+",\"parentUserName\":null}&secure=0&time="+currentMillis)+"\"}";
+        //{"acceptSecure":null,"curSchoolId":0,"msg":null,"msgState":1,"secure":0,"time":0,"userBaseInfo":{"admitNumber":null,"brithday":null,"campus":null,"childName":null,"cityId":0,"classId":"","classStr":"农业工程系","college":"0","collegeName":"农业工程系","deleted":0,"depart":null,"divisionId":0,"domainId":0,"domainName":"","dqztm":1,"endValue":"500","exp":0,"fullImage":"","grade":null,"headImage":"","inviteCode":null,"jg":null,"majorId":"0902","mobile":"18888888888","mobileList":[],"mobileSecret":2,"mzmc":"汉族","nickName":"","officeId":0,"officeName":"","parentName":null,"publishDomain":1,"publishOffice":1,"qq":"","realName":"陈玉奇","rfid":null,"role":8,"roleLevel":0,"schoolId":194,"sex":1,"startValue":"101","summary":"","sznj":"","tel":"","toNextLevel":70,"userId":19411665,"vipLevel":430,"vipLevelName":"2","xqah":null,"zymc":""},"userLoginInfo":{"mail":"201513043@jsahvc.edu.cn","parentUserName":"201513043","phone":null,"pid":null,"regFrom":"信息中心","schoolCard":null,"securityPassword":null,"sex":1,"tokenValue":null,"userId":19411665,"userName":"201513043","wxUserId":null}}
+        ResponseData res=null;
+        try {
+             res=httpClient.Request(url,1,data,"",requestHeader,10000,10000,false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(res==null){
+            return null;
+        }
+        com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes ret=resolveJson(res.responseText,loginRes.class);
+        return ret;
+    }
+
+
     void getNewVersions() {
         String url = "http://app.jsahvc.edu.cn/managerCampus/version/latestVersion.do";
         String RequestHeader = "token: 1002890_hNJcbGFMjLlk3cXizcAOysA5z83Ozt3T3myQbGOlZ2qJZC363c3PzsrPxsANzsEi0CJcdoJsn2eQb2OJZC36zskL0CJkaoZpj2lQbklk3cXP0CJlbWFpbC363c3PzsrOzMALzL-Vj2FXdmzRZWuK0myR3iPiZYJQbt36zCPiaW5mbLlk3cXP0CJpjLyQbmZpjmLixcAT3mOQZ2lRqGlSZt36zsrPy8kKz8rLxsrLyCPibmlcaL5ebWrixi3i0CJPaG9RZt363i3T3Y-pZC363czNz8kNy8E5xsjPy8E2zckOWC3T3YJlnWOxnWKl3cXi6Zm35H6J5aW43iPijm9TZt36xCPid4Zqj2qNtWvixcAT3YqRaovixi3Nz8EKz8kPzcEO3iPidoyljklk3cXOxsvOzsn2ytPidoyljk5ebWrixi3Nz8EKzszPy8zi0CJIh4qMZoJpZC363c3PzsrOzMALzNJ9\n" +

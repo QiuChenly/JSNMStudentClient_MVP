@@ -3,6 +3,7 @@ package com.qiuchenly.stuclient.presenter;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
 import com.qiuchenly.stuclient.model.RequestOnClick;
 import com.qiuchenly.stuclient.model.RequestOnClickListener;
 import com.qiuchenly.stuclient.model.RequestOnClicklmp;
@@ -33,7 +34,7 @@ public class mPresenterImp {
     public void fastLogin() {
         requestOnClick.mFastLogin( new RequestOnClickListener() {
             @Override
-            public void onSuccess(final String name,final int code,final String token) {
+            public void onSuccess(final String name, final int code, final String token,final loginRes ret) {
                 //线程安全
                 handler.post(new Runnable() {
                     @Override
@@ -58,7 +59,7 @@ public class mPresenterImp {
     public void login(String userName, String passWord) {
         requestOnClick.mLoginUser(userName, passWord, new RequestOnClickListener() {
             @Override
-            public void onSuccess(final String name, final int code,final String token) {
+            public void onSuccess(final String name, final int code,final String token, loginRes ret) {
                 //线程安全
                 handler.post(new Runnable() {
                     @Override

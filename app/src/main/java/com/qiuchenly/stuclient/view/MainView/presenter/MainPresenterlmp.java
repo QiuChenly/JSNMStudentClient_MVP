@@ -3,7 +3,9 @@ package com.qiuchenly.stuclient.view.MainView.presenter;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.loginRes;
 import com.qiuchenly.stuclient.model.RequestOnClick;
+import com.qiuchenly.stuclient.model.RequestOnClickListener;
 import com.qiuchenly.stuclient.presenter.mPresenterImp;
 import com.qiuchenly.stuclient.view.MainView.iMainViews;
 
@@ -24,14 +26,33 @@ public class MainPresenterlmp {
     RequestOnClick requestOnClick = null;
 
 
-    public MainPresenterlmp(com.qiuchenly.stuclient.view.MainView.iMainViews iMainViews,
+    public MainPresenterlmp(final com.qiuchenly.stuclient.view.MainView.iMainViews iMainViews,
                             iViewGetPreference iViews) {
         this.iMainViews = iMainViews;
         handler = new Handler(Looper.getMainLooper());
         share = new sharePreference(iViews);
         requestOnClick = mPresenterImp.requestOnClick;
-        iMainViews.getName(requestOnClick.getLoginRes().userBaseInfo.realName);
-        iMainViews.getnick(requestOnClick.getLoginRes().userBaseInfo.collegeName);
+        loginRes ret=requestOnClick.getLoginRes();
+        iMainViews.getName(ret.userBaseInfo.realName);
+        handler =new Handler(Looper.getMainLooper());
+
+        requestOnClick.getUserInfo(new RequestOnClickListener() {
+            @Override
+            public void onSuccess(String name, int code, String token, final loginRes ret) {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        iMainViews.getnick(ret.userBaseInfo.collegeName,ret);
+                    }
+                });
+
+            }
+
+            @Override
+            public void onFailed(String errReson) {
+
+            }
+        });
         iMainViews.getNews();
     }
 
