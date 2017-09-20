@@ -2,184 +2,373 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="D:\androidsdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_e99ba9835dd7d47edb26794484a8afba5f7ae2e1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\a231cd5d8081d2c73568347f889160ecc3d7cabd\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_66ebaa86d611720c6802b794b7c658d82395e532.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\08a2c35a4e3538fd207b6c18d584a2b9021c7325\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_769f2a98336219020b7b15c2499e733c526b4af7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\e3e8500b006f454a1fc183baa48ab5ac856b1cd0\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_e659155016329bbe7f9695fa70bc868bbedd1a47.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\0078163591098dc3a2d2c5f068b654b8f2a1b0d6\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_14611ba3a308554591cbb43c1ad38cca4cbaec45.jar" />
-    </item>
-    <item
         is-multidex="true"
-        jar="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\QiuChenly\.android\build-cache\c0b6a01c774b87fde1d60d98127db7737c86b6df\output\jars\classes.jar"
         jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_ea327a67694752a2b8534234c6267723dd17fb17\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\cfbbaee74be86654cc886c82af4014a013340bd8\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_71f6b1c260c623821fa1ca8dd5c6980c29478633.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\59dbaf70d8531843220d82cc11ed69609f94f4e3\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_5e1a8a344c0f8267ff07483c625452b3121fb1b8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\gson-2.8.0_751c3c80b66d8a80e79973471ef69ab95a41afc8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\2857da6d9aef1530ce1e9122acbd79d3113e3124\output\jars\classes.jar"
-        jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_b7574c6d9a4c7e547b2668b82555f5675d3701a9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\2a85a3726eec3a1ebe132868c3f35e96dac5ee71\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_e2520ad53b0867b507d5e44f3aa5f5871d1b9a64.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\4ee17e58b3b089d26f1436e008c54df153a21ddb\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_6941d391e41f76680406abf36a8c0831ded60e6d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\74b4dbc0fe78e7c6ae3970458d5f639649131ae1\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_5ebfaf2a77456e4d109a7a7b014d5a67525fa387.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\063c440a50f89400a75e1db11e835efd82cefc40\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_d2317f7d3e23ca91b7580b7a7c2a6bf759d36635.jar" />
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_79d34e8005c436e8aefa33ae62a2ea999413baf7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="F:\SDK\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="d6d01a0dfae9db3317fe79957bea7e8bbaa0a8b9">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7e9ddc2c667710a8d1d96c2b7d5d39b02e52a559\classes.dex" />
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_c83a661173eb0e40ec62f6bdc3e721f9475b23be\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\beb43e0220b47ec6939275aec7cf3337c07257d8\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\86cd40f532a6b4f4b9284943ce0fcf86ea2afdca\output\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_764729111f41d0c2a5dc4511e80fe15672dd48cd.jar" />
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d2b2dbae183c95047e337374ff91cb3d541fafd2\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\05eeacca8a780fbca05a08beee08872ac8f018ec\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_f626602aeca71330257919ae09867e0d92a94e57.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\ac1c3c8666f26378e3abe5591ab5a44bc9a053d3\output\jars\classes.jar"
+        jar="C:\Users\QiuChenly\.android\build-cache\33f0032baf5f7fafac7c22684d818ce01b0f2b93\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_f2171a5e45d06a6341a149b21be4a1d8c4e63f11.jar" />
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_c0736f461305ce426ebe5dacdf6d305369858034.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\65d0339d330a3b01c2bf823d52ea0a4d66fe5f81\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ef87279e6d4de9f7ebbd23ca73a0812fc129654d\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\androidsdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jar="C:\Users\QiuChenly\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_c22ad5cfc73745455897b51262db6d4a2ae07540.jar" />
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\gson-2.8.0_a05ce4599aac439d69df4200d617a063aacc67e2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\4caa102af78ef4518d490e32638dd6379746f717\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f1fad8c50b7a4d127661670d25c7569eb00ee424\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\QiuChen\.android\build-cache\2473d927732a36db202c01b4c4f15cbe02dec2d4\output\jars\classes.jar"
+        jar="C:\Users\QiuChenly\.android\build-cache\e2b7145673f384c83a9358633c8b7037e3a69dfb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_4e0622821c79ddafe548f7d27c42ea12399d97c1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\cf768b449128540012788719328b580a3861f578\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_22df473d2a24558a95ae324252edea20c686138e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\SDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_d4565c41d333690beb2e69dbb954781ca12e4541\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\9852a71184ce02659aa76527883847bfa1deea81\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="C:\Users\QiuChen\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_999d9059d1f7ad406fa449cb2c940ce1755990a5.jar" />
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_2f785bb508ce1cf8d2104c3e9befeda8c5d6f76d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3908f8ddd3f20922f9c04830769561a69bc944bb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\158ac170ad0ebfdf17d153172689e32b629622dc\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3b51e9ae5078152383f910dc1f61d9ab218856b7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\b1b438b87e8270234027180ba9c4e66a34cf9cb3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_bbade9ccb3b740dd3b1b0beac231c4915efd367e.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\aa99c00ed4632b1d69666a6968227f1704f328a6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f617ae18870694e45354b575eb669be6777ca98e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\8872d2ed99d996cb54a29dcc20126e999ac9efae\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_b041dd994e305234ea0f09fce128975f3e87bb6e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\0c8c7f88a56590566a2896e69681603bd671d693\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_48e9cd7462a0e671c81532438e5e525cef3da8d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\6c297d880129074f4fc1779846ed8a36e045a532\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_1cd13398c70f42b69086942652a9032b87525034.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\c7f8f4c44ba9dbbbb875cfb29142a0aff841c0f4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5962e4d2774e8b6f538b1eebec17a92468b8dc31\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\59fd45fad7c89e5c214679e6db3e37bcdfe236be\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e9f8171fd8463f40102f42f5b60a96a1ee16f49a\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\52ebd9a46c052fdb9548a451fa7c370c8f5cbfca\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_d6acb4a4176cebd6e2b553a121918c9a1c9587f1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\158ac170ad0ebfdf17d153172689e32b629622dc\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_1417c4c573c5bc6279d7d6c1862784da7278fc29\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\cf768b449128540012788719328b580a3861f578\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_560ef5b90049f1c376de34073327f3f3f826e99a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95be24fa61c8c9ad4771c78d3db05f4c81c51b3e">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0dc180819aab221039b79205f0064b96394400f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.0_a05ce4599aac439d69df4200d617a063aacc67e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\891d3240d2cc4078a37852274ff86ba6f54a23a8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_36cf0eb8e664dcd6736e6417a3090332aadb0df1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\c49912174e1d7d98485bba5ba3adff0c2e9e01f6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_0c07203800cbe1cb5b05063a8d2cc38f32f8d3e5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\5b123c176ed84914bc0d97314fa3dd9be562a5f4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a710df40f1d45ae6923ae3f742f91dd599da29d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\48c68f6eb9f405ad793bae33cd9116d7c59d8fc0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_afc9fe78dc2f3244a812d7d3faf2585bb6d1886f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\5b123c176ed84914bc0d97314fa3dd9be562a5f4\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_56856e02764672780cef20c97b732d23dabd9e04\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\4f693e8864cdee6e587aef5d08cc7c0600aed6ea\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_9d2e5b160124e71488d60e4147e1636e0ae2c316.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\54a4073a0de0daf70ea47b50d403f5f90d44660e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_a6e107f96e14374534de37236a1bcd2a8f16b174.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\932a8d081672c7b43ef2809e354b6b2d851996d7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cc5fb5e21ebd7c34a1a01e2313dd7fd8f5d2972a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\a7aa614c43097ca9e2d022617add0ab5990fb9e8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ab3645610e88e68a5e0f65bcf8a93f3961e934e0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\4caa102af78ef4518d490e32638dd6379746f717\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_d14c0aeb5921c4f095eb2ab94a74b685dde701b4\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\699352c2cf8bfd9a992124f8db7a143b18967434\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_e5a283b301ae30164388c22594f5aa7939f8b57d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\7ec0948ff07e12b851cc3d420a7b42731d5480fb\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3e647249e0c651c003471f3c2b95fbb56bb2aa07\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\QiuChenly\.android\build-cache\fed043f494608a002ac821a3493ea1ba9d33da56\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\pre-dexed\debug\classes_5c2bfba61f6bcaa9aba836c39483138181e087fc.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\b1b438b87e8270234027180ba9c4e66a34cf9cb3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bbade9ccb3b740dd3b1b0beac231c4915efd367e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\86cd40f532a6b4f4b9284943ce0fcf86ea2afdca\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_3ab6ecadb724c5306302b372b891f3b84eb8afe3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\QiuChenly\.android\build-cache\ca50fbf439344dd7c6bdf9d57f8366618147944a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\QiuChenly\Documents\GitHub\JSNMStudentClient_MVP\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8077161ea64eff678b266625b718bd355f5dfddc\classes.dex" />
     </item>
 
 </items>

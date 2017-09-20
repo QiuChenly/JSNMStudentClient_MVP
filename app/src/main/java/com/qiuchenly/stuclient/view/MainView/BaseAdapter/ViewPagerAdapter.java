@@ -30,7 +30,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     List<View> list;
     final Handler handler;
 
-    public ViewPagerAdapter(final Context context, ret_news data) {
+    public ViewPagerAdapter(final Context context, final ret_news data) {
         this.data = data;
         list = new ArrayList<>();
         handler = new Handler(Looper.getMainLooper());
@@ -39,6 +39,14 @@ public class ViewPagerAdapter extends PagerAdapter {
             TextView t = (TextView) frameLayout.findViewById(R.id.news_shortInfo);
             t.setText(data.newsList[a].title);
             final ImageView img = (ImageView) frameLayout.findViewById(R.id.news_image);
+//            if(!(data.newsList[a].imgNameList.length>0)){
+//                list.add(frameLayout);
+//                continue;
+//            }
+            //TODO:暂时修复数据适配问题
+            while(!(data.newsList[a].imgNameList.length>0)){
+                a++;
+            }
             final String url = data.newsList[a].imgNameList[0].replace("http://lantuservice.com/mobilecampus/","");
             new Thread() {
                 @Override
