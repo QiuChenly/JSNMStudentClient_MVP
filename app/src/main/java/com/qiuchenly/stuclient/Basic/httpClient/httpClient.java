@@ -145,6 +145,7 @@ public class httpClient {
         }
 
         int responseCode = 0;
+
         try {
             responseCode = mHttpUrlConnection.getResponseCode();
         } catch (Exception e) {

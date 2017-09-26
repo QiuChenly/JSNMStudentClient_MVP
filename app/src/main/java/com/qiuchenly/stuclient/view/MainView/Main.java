@@ -39,178 +39,186 @@ import java.util.TimerTask;
 
 
 public class Main extends BaseApp implements iMainViews, iViewGetPreference, news_interface {
-    private static final int SWITCHPICTURE = 0;
-    DrawerLayout lDrawerlayout;
-    public MainPresenterImp mainPresenterlmp = null;
-    ImageView iv_userPic, iv_HeadImage;
-    TextView tUserName, tUserNick, nav_title_username, nav_LevelTAG;
 
-    LinearLayout nav_program_exitUser, nav_program_movetoback;
-    FrameLayout ll_title_menu;
-
-    RecyclerView rv_showNews;
-
-    ViewPager nav_SchoolNews;
-
-    @Override
-    public void loadComplete() {
-        //侧滑菜单Header透明
-        lDrawerlayout = (DrawerLayout) findViewById(R.id.lDrawerlayout);
-        StatusBarUtil.setColorNoTranslucentForDrawerLayout(this, lDrawerlayout,
-                Color.argb(0, 0, 0, 0));
-        mainPresenterlmp = new MainPresenterImp(this, this);
+  private static final int SCHEDULETIME = 5000;
 
 
-        mainPresenterlmp.getSchoolNews();
-    }
+  private static final int SWITCHPICTURE = 0;
+  DrawerLayout lDrawerlayout;
+  public MainPresenterImp mainPresenterlmp = null;
+  ImageView iv_userPic, iv_HeadImage;
+  TextView tUserName, tUserNick, nav_title_username, nav_LevelTAG;
 
-    @Override
-    public void SetOnClickListener() {
-        tUserName = $(R.id.nav_user_name, false);
-        tUserNick = $(R.id.nav_user_info, false);
-        iv_userPic = $(R.id.iv_title_userImage, false);
-        iv_HeadImage = $(R.id.nav_HeaderImage, false);
-        //Test Model,will remove in under
-        nav_title_username = $(R.id.nav_title_username, false);
-        //Test Model End
+  LinearLayout nav_program_exitUser, nav_program_movetoback;
+  FrameLayout ll_title_menu;
 
-        nav_program_exitUser = $(R.id.nav_program_exitUser, true);
-        nav_program_movetoback = $(R.id.nav_program_exit, true);
-        ll_title_menu = $(R.id.ll_title_menu, true);
-        rv_showNews = $(R.id.rv_showNews, false);
-        nav_LevelTAG = $(R.id.nav_LevelTAG, false);
-    }
+  RecyclerView rv_showNews;
 
-    @Override
-    public void BeClick(View v) {
-        switch (v.getId()) {
-            case R.id.nav_program_exitUser:
-                mainPresenterlmp.exitUser();
-                break;
-            case R.id.ll_title_menu:
-                lDrawerlayout.openDrawer(Gravity.START);
-                break;
-            case R.id.nav_program_exit:
-                lDrawerlayout.closeDrawer(Gravity.START);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        System.exit(0);
-                    }
-                }, 300);
-        }
-    }
+  ViewPager nav_SchoolNews;
 
-    @Override
-    public int SetThisContentView() {
-        return R.layout.activity_main;
-    }
+  @Override
+  public void loadComplete() {
+    //侧滑菜单Header透明
+    lDrawerlayout = (DrawerLayout) findViewById(R.id.lDrawerlayout);
+    StatusBarUtil.setColorNoTranslucentForDrawerLayout(this, lDrawerlayout,
+            Color.argb(0, 0, 0, 0));
+    mainPresenterlmp = new MainPresenterImp(this, this);
 
-    @Override
-    public void getNews() {
 
-    }
+    mainPresenterlmp.getSchoolNews();
+  }
 
-    @Override
-    public void getImage(Bitmap bitmap) {
-        iv_userPic.setImageBitmap(bitmap);
-    }
+  @Override
+  public void SetOnClickListener() {
+    tUserName = $(R.id.nav_user_name, false);
+    tUserNick = $(R.id.nav_user_info, false);
+    iv_userPic = $(R.id.iv_title_userImage, false);
+    iv_HeadImage = $(R.id.nav_HeaderImage, false);
+    //Test Model,will remove in under
+    nav_title_username = $(R.id.nav_title_username, false);
+    //Test Model End
 
-    @Override
-    public void getName(String name) {
-        tUserName.setText(name);
+    nav_program_exitUser = $(R.id.nav_program_exitUser, true);
+    nav_program_movetoback = $(R.id.nav_program_exit, true);
+    ll_title_menu = $(R.id.ll_title_menu, true);
+    rv_showNews = $(R.id.rv_showNews, false);
+    nav_LevelTAG = $(R.id.nav_LevelTAG, false);
+  }
 
-    }
-
-    @SuppressLint("SetTextI18n")
-    @Override
-    public void getnick(String nick, loginRes ret) {
-        tUserNick.setText(nick + " | " + ret.userLoginInfo.parentUserName);
-        nav_LevelTAG.setText("Lv " + ret.userBaseInfo.vipLevelName);
-        nav_title_username.setText(nick);
-
-    }
-
-    @Override
-    public void exitUser() {
+  @Override
+  public void BeClick(View v) {
+    switch (v.getId()) {
+      case R.id.nav_program_exitUser:
+        mainPresenterlmp.exitUser();
+        break;
+      case R.id.ll_title_menu:
+        lDrawerlayout.openDrawer(Gravity.START);
+        break;
+      case R.id.nav_program_exit:
         lDrawerlayout.closeDrawer(Gravity.START);
         new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(LoginActivity.class, true);
-            }
+          @Override
+          public void run() {
+            System.exit(0);
+          }
         }, 300);
     }
+  }
+
+  @Override
+  public int SetThisContentView() {
+    return R.layout.activity_main;
+  }
+
+  @Override
+  public void getNews() {
+
+  }
+
+  @Override
+  public void getImage(Bitmap bitmap) {
+    iv_userPic.setImageBitmap(bitmap);
+  }
+
+  @Override
+  public void getName(String name) {
+    tUserName.setText(name);
+
+  }
+
+  @SuppressLint("SetTextI18n")
+  @Override
+  public void getnick(String nick, loginRes ret) {
+    tUserNick.setText(nick + " | " + ret.userLoginInfo.parentUserName);
+    nav_LevelTAG.setText("Lv " + ret.userBaseInfo.vipLevelName);
+    nav_title_username.setText(nick);
+
+  }
+
+  @Override
+  public void exitUser() {
+    lDrawerlayout.closeDrawer(Gravity.START);
+    new Handler().postDelayed(new Runnable() {
+      @Override
+      public void run() {
+        startActivity(LoginActivity.class, true);
+      }
+    }, 300);
+  }
 
 
-    private int nowNum = 0;
-    Timer timer;
+  private int nowNum = 0;
+  Timer timer;
 
+  @Override
+  public void getSchoolNews(ret_news ret) {
+
+
+    recyclerViewAdapter adapterA = new recyclerViewAdapter(this, ret);
+    rv_showNews.setHasFixedSize(false);
+    rv_showNews.setLayoutManager(new LinearLayoutManager(this));
+    rv_showNews.addItemDecoration(new RecyclerView.ItemDecoration() {
+      @Override
+      public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        outRect.bottom = 5;
+      }
+    });
+    rv_showNews.setAdapter(adapterA);
+  }
+
+  @SuppressLint("HandlerLeak")
+  Handler handler = new Handler() {
     @Override
-    public void getSchoolNews(ret_news ret) {
+    public void handleMessage(Message msg) {
+      switch (msg.what) {
+        case SWITCHPICTURE:
+          if (msg.arg1 != 0) {
+            nav_SchoolNews.setCurrentItem(msg.arg1);
+          } else {
+            nav_SchoolNews.setCurrentItem(0, false);
+          }
+          break;
+      }
+    }
+  };
+
+  @Override
+  public Context getInstance() {
+    return this;
+  }
 
 
-        recyclerViewAdapter adapterA = new recyclerViewAdapter(this,ret);
-        rv_showNews.setHasFixedSize(false);
-        rv_showNews.setLayoutManager(new LinearLayoutManager(this));
-        rv_showNews.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                outRect.bottom = 5;
-            }
-        });
-        rv_showNews.setAdapter(adapterA);
+  //接口数据
+  @Override
+  public void nav_news(ViewPager v, ret_news ret) {
+    //ret 数据返回 适配
+    nav_SchoolNews = v;// $(R.id.nav_SchoolNews, false);
+    ViewPagerAdapter adapter = new ViewPagerAdapter(this, ret);
+    nav_SchoolNews.setPageTransformer(true, new PagerAnimation());
+    nav_SchoolNews.setAdapter(adapter);
+    //设置Viewpager缓存数量为 3 页,防止内存冲突导致页面被回收
+    nav_SchoolNews.setOffscreenPageLimit(3);
+    if (timer == null) {
+      timer = new Timer();
+    } else {
+      timer.cancel();
     }
 
-    @SuppressLint("HandlerLeak")
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case SWITCHPICTURE:
-                    if (msg.arg1 != 0) {
-                        nav_SchoolNews.setCurrentItem(msg.arg1);
-                    } else {
-                        nav_SchoolNews.setCurrentItem(0, false);
-                    }
-                    break;
-            }
-        }
-    };
-
-    @Override
-    public Context getInstance() {
-        return this;
-    }
-
-    @Override
-    public void nav_news(ViewPager v,ret_news ret) {
-        nav_SchoolNews = v;// $(R.id.nav_SchoolNews, false);
-                ViewPagerAdapter adapter = new ViewPagerAdapter(this, ret);
-        nav_SchoolNews.setPageTransformer(true, new PagerAnimation());
-        nav_SchoolNews.setAdapter(adapter);
-        nav_SchoolNews.setOffscreenPageLimit(3);
-        if (timer == null) {
-            timer = new Timer();
+    //TimeTask定时任务,间隔
+    TimerTask task = new TimerTask() {
+      @Override
+      public void run() {
+        Message msg = new Message();
+        msg.what = SWITCHPICTURE;
+        if (nowNum == 2) {
+          nowNum = 0;
         } else {
-            timer.cancel();
+          nowNum += 1;
         }
-
-
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                Message msg = new Message();
-                msg.what = SWITCHPICTURE;
-                if (nowNum == 2) {
-                    nowNum = 0;
-                } else {
-                    nowNum += 1;
-                }
-                msg.arg1 = nowNum;
-                handler.sendMessage(msg);
-            }
-        };
-        timer.schedule(task, 5000, 5000);
-    }
+        msg.arg1 = nowNum;
+        handler.sendMessage(msg);
+      }
+    };
+    timer.schedule(task, SCHEDULETIME, SCHEDULETIME);
+  }
 }
