@@ -35,7 +35,7 @@
                 android:layout_width="23dp"
                 android:layout_height="23dp"
                 android:layout_gravity="center"
-                android:background="@drawable/titlebar_menu" />
+                android:background="@drawable/titlebar_menu" android:contentDescription="TODO"/>
         </FrameLayout>
 
         <HorizontalScrollView

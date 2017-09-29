@@ -11,12 +11,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.newsInfo;
 import com.qiuchenly.stuclient.Basic.API.HttpResponseUtils.ret_news;
 import com.qiuchenly.stuclient.Basic.httpClient.httpClient;
 import com.qiuchenly.stuclient.R;
 import com.qiuchenly.stuclient.view.MainView.news_interface;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author : QiuChenLy
@@ -27,12 +30,13 @@ import java.io.IOException;
 
 public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapter.VH> {
     news_interface inew = null;
-    ret_news ret_news;
+    List<newsInfo> ret_news;
     Handler handler;
 
-    public recyclerViewAdapter(news_interface iNews, ret_news ret_news) {
+    public recyclerViewAdapter(news_interface iNews, newsInfo ret_news) {
         inew = iNews;
-        this.ret_news = ret_news;
+        this.ret_news=new ArrayList<>();
+        this.ret_news.add(ret_news);
         handler = new Handler(Looper.getMainLooper());
     }
 
@@ -53,9 +57,9 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
         if (position == 0) {
             return;
         }
-        if (ret_news.newsList[position + 2].imgNameList.length >= 1) {
+        if (ret_news.get(position + 2).imgNameList.length >= 1) {
             h.rv_image.setVisibility(View.VISIBLE);
-            final String url = ret_news.newsList[position + 2].imgNameList[0].replace("http://lantuservice.com/mobilecampus/", "");
+            final String url = ret_news.get(position + 2).imgNameList[0].replace("http://lantuservice.com/mobilecampus/", "");
             new Thread() {
                 @Override
                 public void run() {
@@ -77,13 +81,13 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
         }else{
             h.rv_image.setVisibility(View.GONE);
         }
-        h.smallTitle.setText(ret_news.newsList[position + 2].realName);
-        h.rv_title.setText(ret_news.newsList[position + 2].title);
+        h.smallTitle.setText(ret_news.get(position + 2).realName);
+        h.rv_title.setText(ret_news.get(position + 2).title);
     }
 
     @Override
     public int getItemCount() {
-        return ret_news.newsList.length - 2;
+        return ret_news.size() - 2;
     }
 
     class VH extends RecyclerView.ViewHolder {
@@ -101,5 +105,10 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     @Override
     public int getItemViewType(int position) {
         return position;
+    }
+
+
+    public void addmore(){
+
     }
 }
